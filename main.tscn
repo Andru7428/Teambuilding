@@ -14,13 +14,16 @@ position = Vector2(589, 339)
 texture = ExtResource("1_40xyu")
 
 [node name="Node" parent="." instance=ExtResource("1_shwtf")]
-position = Vector2(311, 228)
+position = Vector2(485, 201)
+scale = Vector2(0.6, 0.6)
 node_data = ExtResource("2_sw4j1")
 
 [node name="Node2" parent="." instance=ExtResource("1_shwtf")]
-position = Vector2(598, 230)
+position = Vector2(842, 199)
+scale = Vector2(0.6, 0.6)
 node_data = ExtResource("3_dpnqa")
 
 [node name="Node3" parent="." instance=ExtResource("1_shwtf")]
-position = Vector2(451, 427)
+position = Vector2(652, 457)
+scale = Vector2(0.6, 0.6)
 node_data = ExtResource("4_m1i5k")

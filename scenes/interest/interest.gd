@@ -16,7 +16,6 @@ func _set_interest_data(values: InterestData):
 	interest_data = values
 	if not is_node_ready():
 		await ready
-	circle.modulate = interest_data.color
 	art.texture = interest_data.art
 
 
@@ -25,7 +24,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		if not StateMachine.connecting:
 			var new_line = line_scene.instantiate() as Line
 			new_line.target_1 = self
-			self.add_child(new_line)
+			add_child(new_line)
 			StateMachine.active_line = new_line
 			StateMachine.connecting = true
 		elif StateMachine.active_line != null:
