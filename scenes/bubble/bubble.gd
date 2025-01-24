@@ -1,14 +1,14 @@
-class_name GameNode
+class_name Bubble
 extends Node2D
 
 const radius := 64
 
-@export var node_data: NodeData : set = _set_node_data
+@export var node_data: BubbleData : set = _set_node_data
 @export var circle: Sprite2D
 @export var art: Sprite2D
 @export var interest_scene: PackedScene
 
-func _set_node_data(values: NodeData):
+func _set_node_data(values: BubbleData):
 	node_data = values
 	if not is_node_ready():
 		await ready

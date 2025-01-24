@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5aoyy8kdndxp"
-path="res://.godot/imported/фон.jpg-eb329a8efcf920eaaf8d5dd649d784da.ctex"
+path="res://.godot/imported/фон.jpg-47019bf77c928f5e1fbcc5281b332278.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://фон.jpg"
-dest_files=["res://.godot/imported/фон.jpg-eb329a8efcf920eaaf8d5dd649d784da.ctex"]
+source_file="res://assets/background/фон.jpg"
+dest_files=["res://.godot/imported/фон.jpg-47019bf77c928f5e1fbcc5281b332278.ctex"]
 
 [params]
 

@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="NodeData" load_steps=6 format=3 uid="uid://cmoe4ygeyi4x0"]
+[gd_resource type="Resource" script_class="BubbleData" load_steps=7 format=3 uid="uid://cmoe4ygeyi4x0"]
 
 [ext_resource type="Texture2D" uid="uid://pggliaj12koj" path="res://icon.svg" id="1_djrx3"]
 [ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_q4tfh"]
-[ext_resource type="Script" path="res://custom_resources/node_data.gd" id="2_5lsxa"]
 [ext_resource type="Resource" uid="uid://kto7fn6m8nav" path="res://interests/movies.tres" id="3_3ou2o"]
 [ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="4_w4i57"]
+[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="5_ecpy2"]
+[ext_resource type="Resource" uid="uid://btgjfoki7boxa" path="res://interests/guns.tres" id="5_mjbwd"]
 
 [resource]
-script = ExtResource("2_5lsxa")
+script = ExtResource("5_ecpy2")
 color = Color(0.25326, 0.531867, 0.496013, 1)
 art = ExtResource("1_djrx3")
-interests = Array[ExtResource("1_q4tfh")]([ExtResource("3_3ou2o"), ExtResource("4_w4i57")])
+interests = Array[ExtResource("1_q4tfh")]([ExtResource("3_3ou2o"), ExtResource("4_w4i57"), ExtResource("5_mjbwd")])

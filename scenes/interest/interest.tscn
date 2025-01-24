@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://boambdev0eyrd"]
+[gd_scene load_steps=7 format=3 uid="uid://boambdev0eyrd"]
 
 [ext_resource type="Texture2D" uid="uid://pggliaj12koj" path="res://icon.svg" id="1_ax7df"]
 [ext_resource type="Script" path="res://scenes/interest/interest.gd" id="1_leb37"]
+[ext_resource type="PackedScene" uid="uid://dggbo8v7of0vs" path="res://scenes/line/line.tscn" id="3_m0uav"]
 
 [sub_resource type="Gradient" id="Gradient_rjv1t"]
 offsets = PackedFloat32Array(0, 0.921875, 1)
@@ -15,11 +16,15 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3hf6"]
+radius = 62.5
+
 [node name="Interest" type="Node2D" node_paths=PackedStringArray("circle", "art")]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_leb37")
 circle = NodePath("Circle")
 art = NodePath("Art")
+line_scene = ExtResource("3_m0uav")
 
 [node name="Circle" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_856dw")
@@ -27,3 +32,10 @@ texture = SubResource("GradientTexture2D_856dw")
 [node name="Art" type="Sprite2D" parent="."]
 scale = Vector2(0.421875, 0.421875)
 texture = ExtResource("1_ax7df")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_k3hf6")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

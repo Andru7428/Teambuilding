@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_6y4m4"]
 [ext_resource type="Texture2D" uid="uid://pggliaj12koj" path="res://icon.svg" id="1_a3ma0"]
-[ext_resource type="Script" path="res://custom_resources/node_data.gd" id="2_f0o7p"]
+[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_f0o7p"]
 [ext_resource type="Resource" uid="uid://btgjfoki7boxa" path="res://interests/guns.tres" id="3_jv0jh"]
 [ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="4_r5ap6"]
 
