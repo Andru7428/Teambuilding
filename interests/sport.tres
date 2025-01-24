@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InterestData" load_steps=3 format=3 uid="uid://cmnj6n0thkrdw"]
+
+[ext_resource type="Texture2D" uid="uid://pggliaj12koj" path="res://icon.svg" id="1_jn3c6"]
+[ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_vo4bf"]
+
+[resource]
+script = ExtResource("1_vo4bf")
+id = 0
+color = Color(0.363508, 0.403703, 0.869678, 1)
+art = ExtResource("1_jn3c6")
