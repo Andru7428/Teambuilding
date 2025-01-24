@@ -9,6 +9,7 @@
 [node name="Main" type="Node"]
 
 [node name="Фон" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(589, 339)
 texture = ExtResource("1_40xyu")
 

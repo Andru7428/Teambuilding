@@ -18,11 +18,11 @@ func _get_points() -> Array:
 	var points = []
 	var start = target_1.position
 	
-	start.y += target_1.circle.texture.get_height() / 2
+	#start.y += target_1.circle.texture.get_height() / 2
 	if target_2 == null:
 		target = get_local_mouse_position()
 	else:
-		target = target_2.position
+		target = target_2.global_position - target_1.position
 		target.y += target_2.circle.texture.get_height() / 2
 		
 		
