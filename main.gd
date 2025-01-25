@@ -15,8 +15,12 @@ var dragged_bubble: Bubble
 
 
 func _ready() -> void:
-	for i in range(current_stage + 1):
-		new_stage(stages[i])
+	if current_stage > 0:
+		for i in range(current_stage + 1):
+			new_stage(stages[i])
+	else:
+		$Intro.show()
+		%AnimationPlayer.play("phone")
 
 
 func _input(event: InputEvent) -> void:

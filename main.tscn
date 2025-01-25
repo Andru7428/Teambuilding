@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=23 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -6,54 +6,192 @@
 [ext_resource type="PackedScene" uid="uid://dggbo8v7of0vs" path="res://scenes/connection_line/connection_line.tscn" id="3_jey7f"]
 [ext_resource type="Script" path="res://custom_resources/stage.gd" id="4_x8dlc"]
 [ext_resource type="Resource" uid="uid://dj58b7oyiuxsc" path="res://stages/stage_1.tres" id="5_mafwm"]
-[ext_resource type="Texture2D" uid="uid://bcr4jm52d4y7s" path="res://assets/UI/Иконка_телефона_для_обучения(1).png" id="9_3o2cu"]
-[ext_resource type="Texture2D" uid="uid://bvo75om4orsxr" path="res://assets/UI/шестерня(1).png" id="10_c04jh"]
+[ext_resource type="Resource" uid="uid://bp7rgwbkxdkx1" path="res://stages/stage_2.tres" id="6_c6ylm"]
+[ext_resource type="Resource" uid="uid://dnwl5gh1ll0nd" path="res://stages/stage_3.tres" id="7_aflnx"]
+[ext_resource type="Resource" uid="uid://b485p8ecno3ke" path="res://stages/stage_4.tres" id="8_sh0hu"]
+[ext_resource type="Resource" uid="uid://dovo4yllqt5xx" path="res://stages/stage_5.tres" id="9_un7d5"]
 [ext_resource type="Texture2D" uid="uid://c8lnsiscsn8mp" path="res://assets/UI/Телфон(1).png" id="11_6imnq"]
 [ext_resource type="Texture2D" uid="uid://cbp2mdkvff3l8" path="res://assets/UI/сообщение_1(1).png" id="12_qqu2y"]
 [ext_resource type="Texture2D" uid="uid://c6yl3ds5rcwb3" path="res://assets/UI/сообщение_2(1).png" id="13_28ad4"]
 [ext_resource type="Texture2D" uid="uid://2psu4tt4ekb4" path="res://assets/UI/сообщение_3(1).png" id="14_dw8lf"]
 [ext_resource type="Texture2D" uid="uid://b2jbwtdsyg8oe" path="res://assets/UI/сообщение_4(1).png" id="15_y1v3b"]
-[ext_resource type="Texture2D" uid="uid://b6pll2jkgnu5a" path="res://assets/UI/кнопка_начать(1).png" id="16_hjhtr"]
-[ext_resource type="Texture2D" uid="uid://b0h3n82bsml3k" path="res://assets/UI/кнопка_начать(2).png" id="17_0xxit"]
-[ext_resource type="Texture2D" uid="uid://djaytw2f43aij" path="res://assets/UI/кнопка_начать(3).png" id="18_7ixh7"]
-[ext_resource type="Texture2D" uid="uid://b6a5xhj4j0dk5" path="res://assets/UI/кнопка_начать(4).png" id="19_fw7vg"]
-[ext_resource type="Texture2D" uid="uid://cmjlkqhubika6" path="res://assets/UI/кнопка_начать(5).png" id="20_4db2g"]
-[ext_resource type="Texture2D" uid="uid://0n6o0mbmlaak" path="res://assets/UI/кнопка_начать(6).png" id="21_ab0m7"]
+[ext_resource type="AudioStream" uid="uid://djj3k3t4erli3" path="res://assets/SFX/uvedomlenija.ogg.mp3" id="20_hethd"]
+[ext_resource type="AudioStream" uid="uid://cexdtiai8ynb" path="res://assets/SFX/objedinenie.ogg.mp3" id="20_wld1q"]
+[ext_resource type="AudioStream" uid="uid://buxina0ib1f4h" path="res://assets/music/fon.ogg.mp3" id="21_8l1br"]
+[ext_resource type="AudioStream" uid="uid://nxwl15ewrs83" path="res://assets/music/zwukofisa.ogg.mp3" id="22_os0j2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sc78m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_hjhtr")
+[sub_resource type="Animation" id="Animation_c6we4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phone:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(579, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Phone:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Phone/Message3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Phone/Message4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8osuk"]
+resource_name = "phone"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1176, -0.25, 0, 0.25, 0, 579, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.733333, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phone:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(848, -0.25, 0, 0.25, 0, 323, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.733333, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Phone:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.57079, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.733333, 2)
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Notification")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_hethd")
 }, {
-"duration": 1.0,
-"texture": ExtResource("17_0xxit")
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_hethd")
 }, {
-"duration": 1.0,
-"texture": ExtResource("18_7ixh7")
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_hethd")
 }, {
-"duration": 1.0,
-"texture": ExtResource("19_fw7vg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_4db2g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_ab0m7")
-}, {
-"duration": 1.0,
-"texture": null
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_hethd")
 }],
-"loop": false,
-"name": &"default",
-"speed": 20.0
-}]
+"times": PackedFloat32Array(0, 3.9, 5.26667, 7.6)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Phone/Message2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Phone/Message3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5.27667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Phone/Message4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 7.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_segve"]
+_data = {
+"RESET": SubResource("Animation_c6we4"),
+"phone": SubResource("Animation_8osuk")
+}
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7v5kq")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
-stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm")])
+stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5")])
+current_stage = 1
 
 [node name="Фон" type="Sprite2D" parent="."]
 z_index = -2
@@ -61,41 +199,59 @@ position = Vector2(589, 339)
 texture = ExtResource("1_40xyu")
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Intro" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Шестерня(1)" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1107, 44)
-scale = Vector2(0.70202, 0.70202)
-texture = ExtResource("10_c04jh")
+[node name="ColorRect" type="ColorRect" parent="Intro"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.639216)
 
-[node name="Телфон(1)" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(594, 331)
+[node name="Phone" type="Sprite2D" parent="Intro"]
+position = Vector2(579, 323)
 texture = ExtResource("11_6imnq")
+metadata/_edit_group_ = true
 
-[node name="Сообщение1(1)" type="Sprite2D" parent="CanvasLayer/Телфон(1)"]
-position = Vector2(1, -120)
+[node name="Message1" type="Sprite2D" parent="Intro/Phone"]
+position = Vector2(0, -120)
 texture = ExtResource("12_qqu2y")
 
-[node name="Сообщение2(1)" type="Sprite2D" parent="CanvasLayer/Телфон(1)"]
-position = Vector2(39, -46)
+[node name="Message2" type="Sprite2D" parent="Intro/Phone"]
+visible = false
+position = Vector2(40, -35)
 texture = ExtResource("13_28ad4")
 
-[node name="Сообщение3(1)" type="Sprite2D" parent="CanvasLayer/Телфон(1)"]
-position = Vector2(-6, 69)
+[node name="Message3" type="Sprite2D" parent="Intro/Phone"]
+visible = false
+position = Vector2(0, 72)
 texture = ExtResource("14_dw8lf")
 
-[node name="Сообщение4(1)" type="Sprite2D" parent="CanvasLayer/Телфон(1)"]
-position = Vector2(33, 158)
+[node name="Message4" type="Sprite2D" parent="Intro/Phone"]
+visible = false
+position = Vector2(32, 160)
 texture = ExtResource("15_y1v3b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(163, 203)
-sprite_frames = SubResource("SpriteFrames_sc78m")
-frame = 6
-frame_progress = 1.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_segve")
+}
 
-[node name="ИконкаТелефонаДляОбучения(1)" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1092, 576)
-texture = ExtResource("9_3o2cu")
+[node name="StartDragging" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_wld1q")
+volume_db = -5.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_8l1br")
+autoplay = true
+parameters/looping = true
+
+[node name="Ambient" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_os0j2")
+autoplay = true
+parameters/looping = true
+
+[node name="Notification" type="AudioStreamPlayer2D" parent="."]

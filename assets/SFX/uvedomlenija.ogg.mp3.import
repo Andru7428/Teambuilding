@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/uvedomlenija.ogg.mp3-b12ed28b65b24b2a552fc171
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
