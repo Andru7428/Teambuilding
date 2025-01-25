@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://quc2ydeacyyl"
-path="res://.godot/imported/ded.png-ea95742da00a5a9dfb38bedb9f0c30d6.ctex"
+uid="uid://cwtes334frxcs"
+path="res://.godot/imported/hijab.png-9e4af2e4b834ff78fb9b8250fbb760c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ded.png"
-dest_files=["res://.godot/imported/ded.png-ea95742da00a5a9dfb38bedb9f0c30d6.ctex"]
+source_file="res://assets/bubbles/hijab.png"
+dest_files=["res://.godot/imported/hijab.png-9e4af2e4b834ff78fb9b8250fbb760c7.ctex"]
 
 [params]
 

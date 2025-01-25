@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InterestData" load_steps=3 format=3 uid="uid://kto7fn6m8nav"]
+
+[ext_resource type="Texture2D" uid="uid://btdekxaodwdbt" path="res://assets/interests/h_purple.png" id="1_p46pb"]
+[ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="2_ojfo2"]
+
+[resource]
+script = ExtResource("2_ojfo2")
+id = 0
+art = ExtResource("1_p46pb")

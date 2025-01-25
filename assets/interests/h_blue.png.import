@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pqgm16jjtf6"
-path="res://.godot/imported/blonde.png-cd9f939a9c3ac05f06cac72689856c92.ctex"
+uid="uid://dtcbxholtlm7o"
+path="res://.godot/imported/h_blue.png-7bf897e55c7ac54052292af55bc5a0b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://blonde.png"
-dest_files=["res://.godot/imported/blonde.png-cd9f939a9c3ac05f06cac72689856c92.ctex"]
+source_file="res://assets/interests/h_blue.png"
+dest_files=["res://.godot/imported/h_blue.png-7bf897e55c7ac54052292af55bc5a0b1.ctex"]
 
 [params]
 

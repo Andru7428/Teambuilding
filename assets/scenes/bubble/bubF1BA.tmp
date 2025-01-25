@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhs4f64u7oqsv"]
+
+[ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_hmjej"]
+[ext_resource type="PackedScene" uid="uid://boambdev0eyrd" path="res://scenes/interest/interest.tscn" id="2_6ca8x"]
+[ext_resource type="Texture2D" uid="uid://cxbfgvtqo7uy8" path="res://assets/bubbles/blonde2.png" id="3_3qnpw"]
+
+[node name="Node" type="Node2D" node_paths=PackedStringArray("circle", "art")]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_hmjej")
+circle = NodePath("")
+art = NodePath("Art")
+interest_scene = ExtResource("2_6ca8x")
+
+[node name="Art" type="Sprite2D" parent="."]
+texture = ExtResource("3_3qnpw")
