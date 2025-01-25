@@ -1,9 +1,10 @@
 extends Node
 
+@export var camera: Camera
 @export var bubble_scene: PackedScene
 @export var connection_line_scene: PackedScene
 @export var stages: Array[Stage]
-@export var current_stage := 0
+@export var current_stage := 0 : set = _set_current_stage
 @export var skip_intro := false
 
 enum States {BASE, CONNECTING, DRAGGING, INTRO, WAITING_CLICK}
@@ -14,9 +15,12 @@ var targeted_interest: Interest
 var targeted_bubble: Bubble
 var dragged_bubble: Bubble
 
-
+var scale_step: float
 
 func _ready() -> void:
+	scale_step = 1.0 / len(stages)
+	camera.camera_scale = 1 + scale_step * current_stage
+	print(camera.camera_scale)
 	if skip_intro:
 		for i in range(current_stage + 1):
 			new_stage(stages[i])
@@ -137,3 +141,9 @@ func _on_start_button_pressed() -> void:
 	$PopSound.play()
 	%StartButton.disabled = true
 	%AnimatedSprite2D.play("pressed")
+
+
+func _set_current_stage(value: int) -> void:
+	current_stage = value
+	if camera != null:
+		camera.camera_scale = 1 + scale_step * current_stage

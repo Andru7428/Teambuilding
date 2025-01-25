@@ -23,6 +23,7 @@ art = NodePath("Visuals/Art")
 interest_scene = ExtResource("2_6ca8x")
 
 [node name="Visuals" type="Node2D" parent="."]
+scale = Vector2(0.7, 0.7)
 
 [node name="Art" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("3_3qnpw")
@@ -31,9 +32,11 @@ texture = ExtResource("3_3qnpw")
 texture = ExtResource("4_c52kd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
 shape = SubResource("CircleShape2D_gcouu")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1654c")

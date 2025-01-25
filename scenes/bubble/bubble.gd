@@ -1,7 +1,7 @@
 class_name Bubble
 extends RigidBody2D
 
-const RADIUS := 110
+const RADIUS := 110 * 0.7
 
 signal bubble_mouse_entered(bubble: Bubble)
 signal bubble_mouse_exited(bubble: Bubble)
@@ -31,9 +31,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if dragging:
-		visuals.scale = visuals.scale.move_toward(Vector2(1.1, 1.1), 0.01)
+		visuals.scale = visuals.scale.move_toward(Vector2(0.9, 0.9), 0.01)
 	else:
-		visuals.scale = visuals.scale.move_toward(Vector2(1, 1), 0.01)
+		visuals.scale = visuals.scale.move_toward(Vector2(0.7, 0.7), 0.01)
 	
 	for interest in interests:
 		if interest.connected():
