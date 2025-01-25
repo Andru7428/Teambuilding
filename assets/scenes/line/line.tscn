@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dggbo8v7of0vs"]
 
-[ext_resource type="Script" path="res://scenes/line/line.gd" id="1_onok3"]
+[ext_resource type="Script" path="res://assets/scenes/line/line.gd" id="1_onok3"]
 
 [node name="Line" type="Line2D"]
 z_index = -1

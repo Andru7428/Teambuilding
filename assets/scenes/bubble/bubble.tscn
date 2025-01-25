@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhs4f64u7oqsv"]
 
-[ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_hmjej"]
-[ext_resource type="PackedScene" uid="uid://boambdev0eyrd" path="res://scenes/interest/interest.tscn" id="2_6ca8x"]
+[ext_resource type="Script" path="res://assets/scenes/bubble/bubble.gd" id="1_hmjej"]
+[ext_resource type="PackedScene" uid="uid://boambdev0eyrd" path="res://assets/scenes/interest/interest.tscn" id="2_6ca8x"]
 [ext_resource type="Texture2D" uid="uid://pggliaj12koj" path="res://icon.svg" id="4_7ytfx"]
 
 [sub_resource type="Gradient" id="Gradient_vjsvh"]
