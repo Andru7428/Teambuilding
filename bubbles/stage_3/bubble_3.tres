@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://v2m44yfmbupb" path="res://assets/bubbles/galia2.PNG" id="1_fm4us"]
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_2p4ul"]
 [ext_resource type="Texture2D" uid="uid://cpwbh21nvjym8" path="res://assets/bubbles/galia.PNG" id="2_i7ydc"]
-[ext_resource type="Resource" uid="uid://btgjfoki7boxa" path="res://interests/plants.tres" id="4_cn0p4"]
+[ext_resource type="Resource" uid="uid://dudn81llwvnmy" path="res://interests/butterfly.tres" id="4_0cvpt"]
 [ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="5_q1yhg"]
 
 [resource]
 script = ExtResource("2_2p4ul")
 art_sad = ExtResource("2_i7ydc")
 art_happy = ExtResource("1_fm4us")
-interests = Array[ExtResource("1_36axo")]([ExtResource("4_cn0p4"), ExtResource("5_q1yhg")])
+interests = Array[ExtResource("1_36axo")]([ExtResource("4_0cvpt"), ExtResource("5_q1yhg")])
 main = false
