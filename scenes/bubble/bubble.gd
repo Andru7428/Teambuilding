@@ -5,7 +5,7 @@ const RADIUS := 110
 
 signal bubble_mouse_entered(bubble: Bubble)
 signal bubble_mouse_exited(bubble: Bubble)
-
+signal state_changed
 
 @export var bubble_data: BubbleData : set = _set_node_data
 @export var bubble: Sprite2D
@@ -15,7 +15,7 @@ signal bubble_mouse_exited(bubble: Bubble)
 var interests: Array[Interest]
 var dragging = false
 var happy := false : set = _set_happy
-
+var connected_to_main := false
 
 func _physics_process(delta: float) -> void:
 	if dragging:
@@ -32,6 +32,7 @@ func _set_node_data(values: BubbleData) -> void:
 		await ready
 	if bubble_data.main:
 		art.texture = bubble_data.art_happy
+		happy = true
 		bubble.hide()
 	else:
 		art.texture = bubble_data.art_sad
@@ -56,29 +57,51 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func _on_interest_connection_changed(_interest: Interest) -> void:
-	for interest in interests:
-		if !interest.connected():
+	update_state()
+
+
+func update_state() -> void:
+	if !bubble_data.main:
+		for interest in interests:
+			if !interest.connected():
+				happy = false
+				return
+		
+		if connected_to_main != is_connected_to_main([]):
+			connected_to_main = !connected_to_main 
+			for neighbour in get_neighbours():
+				neighbour.update_state()
+		
+		if !connected_to_main:
 			happy = false
 			return
-		else:
-			print(interest.get_neighbour())
-	happy = true
+		happy = true
 
 
 func _set_happy(value: bool):
-	if not bubble_data.main:
-		happy = value
-		if happy:
-			art.texture = bubble_data.art_happy
-			bubble.hide()
-		else:
-			art.texture = bubble_data.art_sad
-			bubble.show()
+	happy = value
+	if happy:
+		art.texture = bubble_data.art_happy
+		bubble.hide()
+		state_changed.emit()
+	else:
+		art.texture = bubble_data.art_sad
+		bubble.show()
 
 
-func connected_to_main(visited: Array[Bubble]) -> bool:
+func get_neighbours() -> Array[Bubble]:
+	var neighbors = [] as Array[Bubble]
 	for interest in interests:
 		if interest.connected():
-			var neightbour = interest.get_neighbour()
-			visited.append(neightbour)
+			neighbors.append(interest.get_neighbour())
+	return neighbors
+
+
+func is_connected_to_main(visited: Array[Bubble]) -> bool:
+	visited.append(self)
+	if bubble_data.main:
+		return true
+	for neighbour in get_neighbours():
+		if !visited.has(neighbour) and neighbour.is_connected_to_main(visited):
+				return true
 	return false

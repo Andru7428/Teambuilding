@@ -11,7 +11,7 @@ radius = 110.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1654c"]
 radius = 110.0
 
-[node name="Node" type="RigidBody2D" node_paths=PackedStringArray("bubble", "art")]
+[node name="Bubble" type="RigidBody2D" node_paths=PackedStringArray("bubble", "art") groups=["bubble"]]
 lock_rotation = true
 script = ExtResource("1_hmjej")
 bubble = NodePath("Bubble")

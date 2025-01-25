@@ -17,10 +17,14 @@ func _ready() -> void:
 		var new_bubble = create_bubble(bubble_data)
 		new_bubble.bubble_mouse_entered.connect(_on_bubble_mouse_entered)
 		new_bubble.bubble_mouse_exited.connect(_on_bubble_mouse_exited)
+		new_bubble.state_changed.connect(_on_bubble_state_changed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#var bubbles = get_tree().get_nodes_in_group("bubble")
+	#for bubble in bubbles:
+	#	print(bubble.happy)
 	pass
 
 
@@ -50,6 +54,12 @@ func _input(event: InputEvent) -> void:
 				and current_connection_line.starting_interest != targeted_interest:
 					if targeted_interest.connection != null:
 						targeted_interest.connection.remove()
+					
+					for interest in current_connection_line.starting_interest.get_parent().interests:
+						if interest.connected():
+							if interest.get_neighbour() == targeted_interest.get_parent():
+								interest.connection.remove()
+
 					current_connection_line.ending_interest = targeted_interest
 				else:
 					current_connection_line.remove()
@@ -93,3 +103,13 @@ func _on_bubble_mouse_entered(bubble: Bubble) -> void:
 
 func _on_bubble_mouse_exited(_bubble: Bubble) -> void:
 	targeted_bubble = null
+
+
+func _on_bubble_state_changed() -> void:
+	var bubbles = get_tree().get_nodes_in_group("bubble")
+	for bubble in bubbles:
+		print(bubble.happy)
+		print(bubble.connected_to_main)
+		if !bubble.happy:
+			return
+	print("all happy")
