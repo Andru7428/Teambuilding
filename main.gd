@@ -54,7 +54,9 @@ func _input(event: InputEvent) -> void:
 				dragged_bubble = targeted_bubble
 				current_state = States.DRAGGING
 				$StartDragging.play()
-	
+		
+		if current_state == States.ENDING:
+			get_tree().quit()
 	
 	if event.is_action_released("left_mouse"):
 		if current_state == States.CONNECTING:
