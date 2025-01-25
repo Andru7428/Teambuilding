@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3y2js765n6me"
-path="res://.godot/imported/girl2.PNG-f42f6db05a723c10a36ac43bcd248cb2.ctex"
+uid="uid://bn4f5cnwfn15y"
+path="res://.godot/imported/plankton2.PNG-8fe15c1bd39f66fad74a342115d8a1e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/girl2.PNG"
-dest_files=["res://.godot/imported/girl2.PNG-f42f6db05a723c10a36ac43bcd248cb2.ctex"]
+source_file="res://assets/bubbles/plankton2.PNG"
+dest_files=["res://.godot/imported/plankton2.PNG-8fe15c1bd39f66fad74a342115d8a1e1.ctex"]
 
 [params]
 

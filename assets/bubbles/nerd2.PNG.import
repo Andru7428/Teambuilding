@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w1601s2juyp1"
-path="res://.godot/imported/guy2.PNG-2c13107ccb1b40544b02030f217d551a.ctex"
+uid="uid://dfjc2rnm3k7ug"
+path="res://.godot/imported/nerd2.PNG-8d52ef9384adea8aa3f83fcda449b220.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/guy2.PNG"
-dest_files=["res://.godot/imported/guy2.PNG-2c13107ccb1b40544b02030f217d551a.ctex"]
+source_file="res://assets/bubbles/nerd2.PNG"
+dest_files=["res://.godot/imported/nerd2.PNG-8d52ef9384adea8aa3f83fcda449b220.ctex"]
 
 [params]
 

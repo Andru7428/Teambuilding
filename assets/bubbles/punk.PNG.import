@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn4f5cnwfn15y"
-path="res://.godot/imported/plankton2.PNG-caa13cd6ccb41a31f1307d8691463f1d.ctex"
+uid="uid://csph2a5fyrh4n"
+path="res://.godot/imported/punk.PNG-00b22a80924bf3ad5c050774261f4397.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/plankton2.PNG"
-dest_files=["res://.godot/imported/plankton2.PNG-caa13cd6ccb41a31f1307d8691463f1d.ctex"]
+source_file="res://assets/bubbles/punk.PNG"
+dest_files=["res://.godot/imported/punk.PNG-00b22a80924bf3ad5c050774261f4397.ctex"]
 
 [params]
 

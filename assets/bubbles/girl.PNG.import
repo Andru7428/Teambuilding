@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b586c0ojfv11c"
-path="res://.godot/imported/hijab.PNG-4010387fd20c55241c128fe910f7d256.ctex"
+uid="uid://d2r8fpydafpxg"
+path="res://.godot/imported/girl.PNG-f99131a4227c3e180ee7046aaad38913.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/hijab.PNG"
-dest_files=["res://.godot/imported/hijab.PNG-4010387fd20c55241c128fe910f7d256.ctex"]
+source_file="res://assets/bubbles/girl.PNG"
+dest_files=["res://.godot/imported/girl.PNG-f99131a4227c3e180ee7046aaad38913.ctex"]
 
 [params]
 

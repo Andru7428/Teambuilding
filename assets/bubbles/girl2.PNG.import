@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dro5cev6uojo6"
-path="res://.godot/imported/india2.PNG-c703d636d542f5d16a2592be78584cfd.ctex"
+uid="uid://b3y2js765n6me"
+path="res://.godot/imported/girl2.PNG-91a8e7a3d14c0ab8f0a3dca0d4a1fd72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/india2.PNG"
-dest_files=["res://.godot/imported/india2.PNG-c703d636d542f5d16a2592be78584cfd.ctex"]
+source_file="res://assets/bubbles/girl2.PNG"
+dest_files=["res://.godot/imported/girl2.PNG-91a8e7a3d14c0ab8f0a3dca0d4a1fd72.ctex"]
 
 [params]
 

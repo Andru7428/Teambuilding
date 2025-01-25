@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0k4v80kyth57"
-path="res://.godot/imported/secretary.PNG-c800bc7e85809dc120fa20fffde8bab6.ctex"
+uid="uid://g4pmgvrdlaok"
+path="res://.godot/imported/india.PNG-0e3fea09fb7232657131ada92f71b729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/secretary.PNG"
-dest_files=["res://.godot/imported/secretary.PNG-c800bc7e85809dc120fa20fffde8bab6.ctex"]
+source_file="res://assets/bubbles/india.PNG"
+dest_files=["res://.godot/imported/india.PNG-0e3fea09fb7232657131ada92f71b729.ctex"]
 
 [params]
 
