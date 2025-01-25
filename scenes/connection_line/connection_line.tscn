@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dggbo8v7of0vs"]
+
+[ext_resource type="Script" path="res://scenes/connection_line/connection_line.gd" id="1_oyron"]
+
+[node name="Line" type="Line2D"]
+z_index = -1
+script = ExtResource("1_oyron")

@@ -3,6 +3,10 @@ extends RigidBody2D
 
 const RADIUS := 110
 
+signal bubble_mouse_entered(bubble: Bubble)
+signal bubble_mouse_exited(bubble: Bubble)
+
+
 @export var bubble_data: BubbleData : set = _set_node_data
 @export var circle: Sprite2D
 @export var art: Sprite2D
@@ -10,6 +14,7 @@ const RADIUS := 110
 
 var interests: Array[Interest]
 var dragging = false
+
 
 func _physics_process(delta: float) -> void:
 	if dragging:
@@ -19,7 +24,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		linear_damp = 10
 
-func _set_node_data(values: BubbleData):
+
+func _set_node_data(values: BubbleData) -> void:
 	bubble_data = values
 	if not is_node_ready():
 		await ready
@@ -35,10 +41,9 @@ func _set_node_data(values: BubbleData):
 		interests.append(new_interest)
 
 
-func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("left_mouse"):
-		dragging = true
-		
-	elif event.is_action_released("left_mouse") and dragging:
-		dragging = false
-		linear_velocity = Vector2.ZERO
+func _on_area_2d_mouse_entered() -> void:
+	bubble_mouse_entered.emit(self)
+
+
+func _on_area_2d_mouse_exited() -> void:
+	bubble_mouse_exited.emit(self)

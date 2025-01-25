@@ -3,3 +3,4 @@ extends Resource
 
 @export var art: Texture
 @export var interests: Array[InterestData] 
+@export var main := false
