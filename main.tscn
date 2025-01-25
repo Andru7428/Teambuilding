@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=35 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -9,11 +9,9 @@
 [ext_resource type="Resource" uid="uid://bp7rgwbkxdkx1" path="res://stages/stage_2.tres" id="6_c6ylm"]
 [ext_resource type="Resource" uid="uid://dnwl5gh1ll0nd" path="res://stages/stage_3.tres" id="7_aflnx"]
 [ext_resource type="Resource" uid="uid://b485p8ecno3ke" path="res://stages/stage_4.tres" id="8_sh0hu"]
-[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="9_jpq1v"]
-[ext_resource type="Resource" uid="uid://1bfya6ej4ium" path="res://bubbles/stage_5/bubble_1.tres" id="10_ockag"]
+[ext_resource type="Resource" uid="uid://6iptf6f14v32" path="res://stages/stage_5.tres" id="9_hs6e4"]
+[ext_resource type="Resource" uid="uid://clvgl8d4tbbbe" path="res://stages/stage_6.tres" id="10_hxlb3"]
 [ext_resource type="Texture2D" uid="uid://c8lnsiscsn8mp" path="res://assets/UI/Телфон(1).png" id="11_6imnq"]
-[ext_resource type="Resource" uid="uid://bxvt0b4ls8syl" path="res://bubbles/stage_5/bubble_2.tres" id="11_avbx1"]
-[ext_resource type="Resource" uid="uid://grsbntl1sgx4" path="res://bubbles/stage_5/bubble_3.tres" id="12_ko6vm"]
 [ext_resource type="Texture2D" uid="uid://cbp2mdkvff3l8" path="res://assets/UI/сообщение_1(1).png" id="12_qqu2y"]
 [ext_resource type="Texture2D" uid="uid://c6yl3ds5rcwb3" path="res://assets/UI/сообщение_2(1).png" id="13_28ad4"]
 [ext_resource type="Texture2D" uid="uid://2psu4tt4ekb4" path="res://assets/UI/сообщение_3(1).png" id="14_dw8lf"]
@@ -30,10 +28,6 @@
 [ext_resource type="AudioStream" uid="uid://nxwl15ewrs83" path="res://assets/music/zwukofisa.ogg.mp3" id="22_os0j2"]
 [ext_resource type="PackedScene" uid="uid://chlnfl3wcfgv0" path="res://scenes/camera/camera.tscn" id="23_e663e"]
 [ext_resource type="AudioStream" uid="uid://byanaqei4w3ol" path="res://assets/SFX/puzirlopnul.ogg.mp3" id="26_gkc0s"]
-
-[sub_resource type="Resource" id="Resource_ehrp5"]
-script = ExtResource("4_x8dlc")
-new_bubbles = Array[ExtResource("9_jpq1v")]([ExtResource("10_ockag"), ExtResource("11_avbx1"), ExtResource("12_ko6vm")])
 
 [sub_resource type="Animation" id="Animation_c6we4"]
 length = 0.001
@@ -359,9 +353,7 @@ script = ExtResource("1_7v5kq")
 camera = NodePath("Camera")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
-stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), SubResource("Resource_ehrp5")])
-current_stage = 5
-skip_intro = true
+stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_hs6e4"), ExtResource("10_hxlb3")])
 
 [node name="Фон" type="Sprite2D" parent="."]
 z_index = -2

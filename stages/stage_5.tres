@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stage" load_steps=6 format=3 uid="uid://6iptf6f14v32"]
+
+[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="1_xepnb"]
+[ext_resource type="Resource" uid="uid://1bfya6ej4ium" path="res://bubbles/stage_5/bubble_1.tres" id="2_vfm2s"]
+[ext_resource type="Script" path="res://custom_resources/stage.gd" id="2_xbcxs"]
+[ext_resource type="Resource" uid="uid://bxvt0b4ls8syl" path="res://bubbles/stage_5/bubble_2.tres" id="3_2amph"]
+[ext_resource type="Resource" uid="uid://grsbntl1sgx4" path="res://bubbles/stage_5/bubble_3.tres" id="4_7ypd6"]
+
+[resource]
+script = ExtResource("2_xbcxs")
+new_bubbles = Array[ExtResource("1_xepnb")]([ExtResource("2_vfm2s"), ExtResource("3_2amph"), ExtResource("4_7ypd6")])
