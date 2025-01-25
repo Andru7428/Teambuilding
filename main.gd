@@ -34,6 +34,7 @@ func _input(event: InputEvent) -> void:
 				targeted_bubble.dragging = true
 				dragged_bubble = targeted_bubble
 				current_state = States.DRAGGING
+				$StartDragging.play()
 				
 	
 	if event.is_action_released("left_mouse"):

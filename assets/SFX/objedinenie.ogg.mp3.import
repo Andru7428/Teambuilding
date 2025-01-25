@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/objedinenie.ogg.mp3-89ef7a13d4cad4ad6bfc9a8e2
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

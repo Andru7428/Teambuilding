@@ -8,6 +8,7 @@ signal bubble_mouse_exited(bubble: Bubble)
 signal state_changed
 
 @export var bubble_data: BubbleData : set = _set_node_data
+@export var visuals: Node2D
 @export var bubble: Sprite2D
 @export var art: Sprite2D
 @export var interest_scene: PackedScene
@@ -16,6 +17,36 @@ var interests: Array[Interest]
 var dragging = false
 var happy := false : set = _set_happy
 var connected_to_main := false
+
+var rot := 0.0
+var rot_speed := PI / 20
+
+
+func _ready() -> void:
+	hide()
+	await get_tree().create_timer(randf()).timeout
+	show()
+	rot = randf() * 2 * PI
+	$NewSound.play()
+
+func _process(delta: float) -> void:
+	if dragging:
+		visuals.scale = visuals.scale.move_toward(Vector2(1.1, 1.1), 0.01)
+	else:
+		visuals.scale = visuals.scale.move_toward(Vector2(1, 1), 0.01)
+	
+	for interest in interests:
+		if interest.connected():
+			return
+	
+	
+	var step = 2 * PI / len(bubble_data.interests)
+	for i in range(len(interests)):
+		var interest = interests[i]
+		interest.position = Vector2(sin(i * step + rot), -cos(i * step + rot)) * RADIUS
+	rot = fmod(rot + rot_speed * delta, 2 * PI)
+	
+
 
 func _physics_process(delta: float) -> void:
 	if dragging:
@@ -79,14 +110,19 @@ func update_state() -> void:
 
 
 func _set_happy(value: bool):
+	if !value and happy:
+		$NotHappySound.play()
 	happy = value
 	if happy:
 		art.texture = bubble_data.art_happy
 		bubble.hide()
 		state_changed.emit()
+		if not bubble_data.main:
+			$PopSound.play()
 	else:
 		art.texture = bubble_data.art_sad
 		bubble.show()
+		
 
 
 func get_neighbours() -> Array[Bubble]:

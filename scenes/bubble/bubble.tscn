@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhs4f64u7oqsv"]
+[gd_scene load_steps=10 format=3 uid="uid://bhs4f64u7oqsv"]
 
 [ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_hmjej"]
 [ext_resource type="PackedScene" uid="uid://boambdev0eyrd" path="res://scenes/interest/interest.tscn" id="2_6ca8x"]
-[ext_resource type="Texture2D" uid="uid://dacgrh4tlvy1q" path="res://assets/bubbles/blonde2.png" id="3_3qnpw"]
-[ext_resource type="Texture2D" uid="uid://c527ll3wxj5xi" path="res://assets/bubbles/bubble.png" id="4_c52kd"]
+[ext_resource type="Texture2D" uid="uid://dacgrh4tlvy1q" path="res://assets/bubbles/blonde2.PNG" id="3_3qnpw"]
+[ext_resource type="Texture2D" uid="uid://c527ll3wxj5xi" path="res://assets/bubbles/bubble.PNG" id="4_c52kd"]
+[ext_resource type="AudioStream" uid="uid://byanaqei4w3ol" path="res://assets/SFX/puzirlopnul.ogg.mp3" id="5_lbsdh"]
+[ext_resource type="AudioStream" uid="uid://7thantmikkw6" path="res://assets/SFX/razrivpuzirya.ogg.mp3" id="6_t88d1"]
+[ext_resource type="AudioStream" uid="uid://bn88nmxc78ubp" path="res://assets/SFX/novijchelovek.ogg.mp3" id="7_1i3ne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcouu"]
 radius = 110.0
@@ -11,17 +14,20 @@ radius = 110.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1654c"]
 radius = 110.0
 
-[node name="Bubble" type="RigidBody2D" node_paths=PackedStringArray("bubble", "art") groups=["bubble"]]
+[node name="Bubble" type="RigidBody2D" node_paths=PackedStringArray("visuals", "bubble", "art") groups=["bubble"]]
 lock_rotation = true
 script = ExtResource("1_hmjej")
-bubble = NodePath("Bubble")
-art = NodePath("Art")
+visuals = NodePath("Visuals")
+bubble = NodePath("Visuals/Bubble")
+art = NodePath("Visuals/Art")
 interest_scene = ExtResource("2_6ca8x")
 
-[node name="Art" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Art" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("3_3qnpw")
 
-[node name="Bubble" type="Sprite2D" parent="."]
+[node name="Bubble" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("4_c52kd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,6 +37,17 @@ shape = SubResource("CircleShape2D_gcouu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1654c")
+
+[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lbsdh")
+volume_db = -10.0
+
+[node name="NotHappySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_t88d1")
+
+[node name="NewSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1i3ne")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

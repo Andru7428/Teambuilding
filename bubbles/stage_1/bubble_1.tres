@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BubbleData" load_steps=8 format=3 uid="uid://cmoe4ygeyi4x0"]
+[gd_resource type="Resource" script_class="BubbleData" load_steps=7 format=3 uid="uid://cmoe4ygeyi4x0"]
 
 [ext_resource type="Texture2D" uid="uid://oxxhpe7o7ceo" path="res://assets/bubbles/anya2.PNG" id="1_a0h68"]
 [ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_q4tfh"]
@@ -6,11 +6,10 @@
 [ext_resource type="Resource" uid="uid://kto7fn6m8nav" path="res://interests/music.tres" id="3_6jqj4"]
 [ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="4_w4i57"]
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="5_ecpy2"]
-[ext_resource type="Resource" uid="uid://btgjfoki7boxa" path="res://interests/plants.tres" id="5_fqdto"]
 
 [resource]
 script = ExtResource("5_ecpy2")
 art_sad = ExtResource("2_ptvki")
 art_happy = ExtResource("1_a0h68")
-interests = Array[ExtResource("1_q4tfh")]([ExtResource("3_6jqj4"), ExtResource("4_w4i57"), ExtResource("5_fqdto")])
+interests = Array[ExtResource("1_q4tfh")]([ExtResource("3_6jqj4"), ExtResource("4_w4i57")])
 main = true
