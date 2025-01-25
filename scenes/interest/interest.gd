@@ -1,6 +1,8 @@
 class_name Interest
 extends Node2D
 
+signal connection_started(inerest: Interest)
+
 const ARC_POINTS := 16
 
 @export var circle: Sprite2D
@@ -21,16 +23,7 @@ func _set_interest_data(values: InterestData):
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("left_mouse"):
-		if not StateMachine.connecting:
-			var new_line = line_scene.instantiate() as Line
-			new_line.target_1 = self
-			add_child(new_line)
-			StateMachine.active_line = new_line
-			StateMachine.connecting = true
-		elif StateMachine.active_line != null:
-			StateMachine.active_line.target_2 = self
-			StateMachine.connecting = false
-			StateMachine.active_line = null
+		pass
 
 
 func _get_points() -> Array:

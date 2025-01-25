@@ -1,29 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=8 format=3 uid="uid://5ymmdk2abe1y"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
 [ext_resource type="PackedScene" uid="uid://bhs4f64u7oqsv" path="res://scenes/bubble/bubble.tscn" id="1_shwtf"]
 [ext_resource type="Resource" uid="uid://cmoe4ygeyi4x0" path="res://bubbles/bubble_1.tres" id="2_sw4j1"]
 [ext_resource type="Resource" uid="uid://b0a71m858jxvk" path="res://bubbles/bubble_2.tres" id="3_dpnqa"]
+[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="3_ux80d"]
 [ext_resource type="Resource" uid="uid://xfbsxkoly6pi" path="res://bubbles/bubble_3.tres" id="4_m1i5k"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_7v5kq")
+bubble_scene = ExtResource("1_shwtf")
+bubbles = Array[ExtResource("3_ux80d")]([ExtResource("2_sw4j1"), ExtResource("3_dpnqa"), ExtResource("4_m1i5k")])
 
 [node name="Фон" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(589, 339)
 texture = ExtResource("1_40xyu")
-
-[node name="Node" parent="." instance=ExtResource("1_shwtf")]
-position = Vector2(485, 201)
-scale = Vector2(0.6, 0.6)
-node_data = ExtResource("2_sw4j1")
-
-[node name="Node2" parent="." instance=ExtResource("1_shwtf")]
-position = Vector2(842, 199)
-scale = Vector2(0.6, 0.6)
-node_data = ExtResource("3_dpnqa")
-
-[node name="Node3" parent="." instance=ExtResource("1_shwtf")]
-position = Vector2(652, 457)
-scale = Vector2(0.6, 0.6)
-node_data = ExtResource("4_m1i5k")
