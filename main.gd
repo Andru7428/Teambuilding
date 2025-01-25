@@ -132,7 +132,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 	if anim_name == "close_intro":
 		$Intro.hide()
-		new_stage(stages[current_stage])
+		for i in range(current_stage + 1):
+			new_stage(stages[i])
 		current_state = States.BASE
 
 
