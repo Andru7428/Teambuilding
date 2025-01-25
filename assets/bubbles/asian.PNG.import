@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl578y244g6p7"
-path="res://.godot/imported/blonde.PNG-dc12d3fab5fbf345adba18d8464d45df.ctex"
+uid="uid://diuu4pyvsmn7l"
+path="res://.godot/imported/asian.PNG-5e1a3110f0887c5e653a41977726defc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubbles/blonde.PNG"
-dest_files=["res://.godot/imported/blonde.PNG-dc12d3fab5fbf345adba18d8464d45df.ctex"]
+source_file="res://assets/bubbles/asian.PNG"
+dest_files=["res://.godot/imported/asian.PNG-5e1a3110f0887c5e653a41977726defc.ctex"]
 
 [params]
 
