@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="BubbleData" load_steps=6 format=3 uid="uid://xfbsxkoly6pi"]
+[gd_resource type="Resource" script_class="BubbleData" load_steps=7 format=3 uid="uid://xfbsxkoly6pi"]
 
+[ext_resource type="Texture2D" uid="uid://cwtes334frxcs" path="res://assets/bubbles/hijab.png" id="1_1sp1j"]
 [ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_dg8qa"]
 [ext_resource type="Texture2D" uid="uid://ckwgybuerd7sm" path="res://assets/bubbles/hijab2.png" id="1_u0llv"]
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_vydso"]
@@ -8,5 +9,7 @@
 
 [resource]
 script = ExtResource("2_vydso")
-art = ExtResource("1_u0llv")
+art_sad = ExtResource("1_u0llv")
+art_happy = ExtResource("1_1sp1j")
 interests = Array[ExtResource("1_dg8qa")]([ExtResource("3_mb17a"), ExtResource("4_wso63")])
+main = false

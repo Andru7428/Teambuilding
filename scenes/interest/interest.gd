@@ -1,13 +1,13 @@
 class_name Interest
 extends Node2D
 
-#signal connection(inerest: Interest)
 signal mouse_entered(interest: Interest)
 signal mouse_exited(interest: Interest)
 
 @export var art: Sprite2D
 
 var interest_data: InterestData : set = _set_interest_data
+var connection: ConnectionLine
 
 
 func _set_interest_data(values: InterestData) -> void:

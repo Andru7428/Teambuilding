@@ -29,7 +29,7 @@ func _set_node_data(values: BubbleData) -> void:
 	bubble_data = values
 	if not is_node_ready():
 		await ready
-	art.texture = bubble_data.art
+	art.texture = bubble_data.art_sad
 	
 	var step = 2 * PI / len(bubble_data.interests)
 	for i in range(len(bubble_data.interests)):

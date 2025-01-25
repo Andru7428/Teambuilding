@@ -46,9 +46,9 @@ func _set_starting_interest(value: Interest) -> void:
 
 func _set_ending_interest(value: Interest) -> void:
 	ending_interest = value
-	if starting_interest == ending_interest:
-		queue_free()
-		print("1")
+	if starting_interest == ending_interest \
+	or starting_interest.interest_data.resource_path != ending_interest.interest_data.resource_path:
+		remove()
 
 
 func _get_avg_color(interest: Interest) -> Color:
@@ -63,3 +63,12 @@ func _get_avg_color(interest: Interest) -> Color:
 			
 	color /= texture_size.x * texture_size.y
 	return color
+
+
+func remove() -> void:
+	if starting_interest != null:
+		starting_interest.connection = null
+	if ending_interest != null:
+		ending_interest.connection = null
+	
+	queue_free()

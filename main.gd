@@ -28,6 +28,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		if current_state == States.BASE:
 			if targeted_interest != null:
+				if targeted_interest.connection != null:
+					targeted_interest.connection.remove()
 				current_connection_line = connection_line_scene.instantiate() as ConnectionLine
 				add_child(current_connection_line)
 				current_connection_line.starting_interest = targeted_interest
