@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=33 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -15,10 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://c6yl3ds5rcwb3" path="res://assets/UI/сообщение_2(1).png" id="13_28ad4"]
 [ext_resource type="Texture2D" uid="uid://2psu4tt4ekb4" path="res://assets/UI/сообщение_3(1).png" id="14_dw8lf"]
 [ext_resource type="Texture2D" uid="uid://b2jbwtdsyg8oe" path="res://assets/UI/сообщение_4(1).png" id="15_y1v3b"]
+[ext_resource type="Texture2D" uid="uid://b6pll2jkgnu5a" path="res://assets/UI/кнопка_начать(1).png" id="17_1mcha"]
+[ext_resource type="Texture2D" uid="uid://b0h3n82bsml3k" path="res://assets/UI/кнопка_начать(2).png" id="18_xfdhc"]
+[ext_resource type="Texture2D" uid="uid://djaytw2f43aij" path="res://assets/UI/кнопка_начать(3).png" id="19_ego6v"]
+[ext_resource type="Texture2D" uid="uid://b6a5xhj4j0dk5" path="res://assets/UI/кнопка_начать(4).png" id="20_b4kka"]
 [ext_resource type="AudioStream" uid="uid://djj3k3t4erli3" path="res://assets/SFX/uvedomlenija.ogg.mp3" id="20_hethd"]
 [ext_resource type="AudioStream" uid="uid://cexdtiai8ynb" path="res://assets/SFX/objedinenie.ogg.mp3" id="20_wld1q"]
+[ext_resource type="Texture2D" uid="uid://cmjlkqhubika6" path="res://assets/UI/кнопка_начать(5).png" id="21_6dhbe"]
 [ext_resource type="AudioStream" uid="uid://buxina0ib1f4h" path="res://assets/music/fon.ogg.mp3" id="21_8l1br"]
+[ext_resource type="Texture2D" uid="uid://0n6o0mbmlaak" path="res://assets/UI/кнопка_начать(6).png" id="22_02pmj"]
 [ext_resource type="AudioStream" uid="uid://nxwl15ewrs83" path="res://assets/music/zwukofisa.ogg.mp3" id="22_os0j2"]
+[ext_resource type="AudioStream" uid="uid://byanaqei4w3ol" path="res://assets/SFX/puzirlopnul.ogg.mp3" id="26_gkc0s"]
 
 [sub_resource type="Animation" id="Animation_c6we4"]
 length = 0.001
@@ -79,10 +86,107 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.639216)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("StartButton:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(869, 659)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%StartButton:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Phone/Message2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ipc65"]
+resource_name = "close_intro"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(579, -0.25, 0, 0.25, 0, 1176, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.933333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phone:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0, 848, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.933333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Phone:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.57079, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.933333)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.639216), Color(0, 0, 0, 0.639216), Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_8osuk"]
 resource_name = "intro"
-length = 10.0
+length = 12.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -150,10 +254,10 @@ tracks/4/path = NodePath("Phone/Message2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.9),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -179,12 +283,68 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("StartButton:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8.06667, 8.73333, 9.4, 9.96667, 10.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(869, 659), Vector2(937, 595), Vector2(854, 548), Vector2(942, 503), Vector2(893, 426)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%StartButton:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 9.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_segve"]
 _data = {
 "RESET": SubResource("Animation_c6we4"),
+"close_intro": SubResource("Animation_ipc65"),
 "intro": SubResource("Animation_8osuk")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wygw7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vs5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_1mcha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xfdhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ego6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b4kka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6dhbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_02pmj")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 15.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7v5kq")
@@ -199,7 +359,6 @@ texture = ExtResource("1_40xyu")
 metadata/_edit_lock_ = true
 
 [node name="Intro" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
 anchors_preset = 15
@@ -239,6 +398,33 @@ libraries = {
 "": SubResource("AnimationLibrary_segve")
 }
 
+[node name="StartButton" type="Button" parent="Intro"]
+unique_name_in_owner = true
+offset_left = 869.0
+offset_top = 659.0
+offset_right = 1040.0
+offset_bottom = 835.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wygw7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wygw7")
+disabled = true
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Intro/StartButton"]
+unique_name_in_owner = true
+position = Vector2(89, 91)
+sprite_frames = SubResource("SpriteFrames_0vs5q")
+animation = &"pressed"
+
 [node name="StartDragging" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_wld1q")
 volume_db = -5.0
@@ -255,4 +441,9 @@ parameters/looping = true
 
 [node name="Notification" type="AudioStreamPlayer2D" parent="."]
 
+[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_gkc0s")
+volume_db = -10.0
+
 [connection signal="animation_finished" from="Intro/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]
