@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v2m44yfmbupb"
-path="res://.godot/imported/galia2.png-48f13ed086c24d4a7319a6336aea42d2.ctex"
+uid="uid://cuxdicjxcbutf"
+path="res://.godot/imported/не_активная_кнопка.png-c63b8a673d17bbcc9653ddaa5f31740f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubbles/galia2.png"
-dest_files=["res://.godot/imported/galia2.png-48f13ed086c24d4a7319a6336aea42d2.ctex"]
+source_file="res://assets/UI/не_активная_кнопка.png"
+dest_files=["res://.godot/imported/не_активная_кнопка.png-c63b8a673d17bbcc9653ddaa5f31740f.ctex"]
 
 [params]
 
