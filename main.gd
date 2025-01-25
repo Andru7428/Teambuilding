@@ -24,6 +24,14 @@ func _ready() -> void:
 	if skip_intro:
 		for i in range(current_stage + 1):
 			new_stage(stages[i])
+		%Cog.modulate = Color(1, 1, 1, 1)
+		%PhoneIcon.modulate = Color(1, 1, 1, 1)
+		
+		if current_stage == 0:
+			await get_tree().create_timer(1).timeout
+			$PopUpSound.play()
+			%PopUp1.show()
+			%AnimationPlayer.play("popup1_open")
 	else:
 		current_state = States.INTRO
 		$Intro.show()
@@ -135,6 +143,24 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		for i in range(current_stage + 1):
 			new_stage(stages[i])
 		current_state = States.BASE
+		
+		if current_stage == 0:
+			await get_tree().create_timer(1).timeout
+			$PopUpSound.play()
+			%PopUp1.show()
+			%AnimationPlayer.play("popup1_open")
+	
+	if anim_name == "popup1_open":
+		%PopupButton1.disabled = false
+	
+	if anim_name == "popup1_close":
+		%PopUp1.hide()
+	
+	if anim_name == "popup2_open":
+		%PopupButton2.disabled = false
+	
+	if anim_name == "popup2_close":
+		%PopUp2.hide()
 
 
 func _on_start_button_pressed() -> void:
@@ -148,3 +174,26 @@ func _set_current_stage(value: int) -> void:
 	current_stage = value
 	if camera != null:
 		camera.camera_scale = 1 + scale_step * current_stage
+	
+	if current_stage == 1:
+		if !is_node_ready():
+			await ready
+		if !%PopupButton1.disabled:
+			%PopupButton1.disabled = true
+			%AnimationPlayer.play("popup1_close")
+		await get_tree().create_timer(1).timeout
+		$PopUpSound.play()
+		%PopUp2.show()
+		%AnimationPlayer.play("popup2_open")
+
+
+func _on_popup_button_1_pressed() -> void:
+	$PopUpSound.play()
+	%PopupButton1.disabled = true
+	%AnimationPlayer.play("popup1_close")
+
+
+func _on_popup_button_2_pressed() -> void:
+	$PopUpSound.play()
+	%PopupButton2.disabled = true
+	%AnimationPlayer.play("popup2_close")

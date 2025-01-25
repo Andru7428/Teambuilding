@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ghnf7bwucr26" path="res://assets/bubbles/mr_m2.png" id="1_rlfyo"]
 [ext_resource type="Texture2D" uid="uid://yata6b3taglq" path="res://assets/bubbles/mr_m.png" id="2_epq5l"]
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_yylgm"]
-[ext_resource type="Resource" uid="uid://dudn81llwvnmy" path="res://interests/butterfly.tres" id="4_fo0sw"]
+[ext_resource type="Resource" path="res://interests/butterfly.tres" id="4_fo0sw"]
 [ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="5_tvjol"]
 [ext_resource type="Resource" uid="uid://kto7fn6m8nav" path="res://interests/music.tres" id="6_xs5ee"]
 

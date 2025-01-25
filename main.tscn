@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=44 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -9,11 +9,14 @@
 [ext_resource type="Resource" uid="uid://bp7rgwbkxdkx1" path="res://stages/stage_2.tres" id="6_c6ylm"]
 [ext_resource type="Resource" uid="uid://dnwl5gh1ll0nd" path="res://stages/stage_3.tres" id="7_aflnx"]
 [ext_resource type="Resource" uid="uid://b485p8ecno3ke" path="res://stages/stage_4.tres" id="8_sh0hu"]
-[ext_resource type="Resource" uid="uid://6iptf6f14v32" path="res://stages/stage_5.tres" id="9_hs6e4"]
-[ext_resource type="Resource" uid="uid://clvgl8d4tbbbe" path="res://stages/stage_6.tres" id="10_hxlb3"]
+[ext_resource type="Resource" uid="uid://dovo4yllqt5xx" path="res://stages/stage_5.tres" id="9_un7d5"]
+[ext_resource type="Resource" uid="uid://dnjqqmlfdjfap" path="res://stages/stage_6.tres" id="10_wbb0d"]
 [ext_resource type="Texture2D" uid="uid://c8lnsiscsn8mp" path="res://assets/UI/Телфон(1).png" id="11_6imnq"]
+[ext_resource type="Texture2D" uid="uid://bvo75om4orsxr" path="res://assets/UI/шестерня(1).png" id="12_5kao6"]
 [ext_resource type="Texture2D" uid="uid://cbp2mdkvff3l8" path="res://assets/UI/сообщение_1(1).png" id="12_qqu2y"]
 [ext_resource type="Texture2D" uid="uid://c6yl3ds5rcwb3" path="res://assets/UI/сообщение_2(1).png" id="13_28ad4"]
+[ext_resource type="Texture2D" uid="uid://p3qmxnaclyfe" path="res://assets/UI/плашка_обучения(1).png" id="13_cnun7"]
+[ext_resource type="FontFile" uid="uid://crgvwlhvjugun" path="res://assets/fonts/goosberry_version_02.otf" id="14_3ih6u"]
 [ext_resource type="Texture2D" uid="uid://2psu4tt4ekb4" path="res://assets/UI/сообщение_3(1).png" id="14_dw8lf"]
 [ext_resource type="Texture2D" uid="uid://b2jbwtdsyg8oe" path="res://assets/UI/сообщение_4(1).png" id="15_y1v3b"]
 [ext_resource type="Texture2D" uid="uid://b6pll2jkgnu5a" path="res://assets/UI/кнопка_начать(1).png" id="17_1mcha"]
@@ -27,7 +30,41 @@
 [ext_resource type="Texture2D" uid="uid://0n6o0mbmlaak" path="res://assets/UI/кнопка_начать(6).png" id="22_02pmj"]
 [ext_resource type="AudioStream" uid="uid://nxwl15ewrs83" path="res://assets/music/zwukofisa.ogg.mp3" id="22_os0j2"]
 [ext_resource type="PackedScene" uid="uid://chlnfl3wcfgv0" path="res://scenes/camera/camera.tscn" id="23_e663e"]
+[ext_resource type="Texture2D" uid="uid://bcr4jm52d4y7s" path="res://assets/UI/Иконка_телефона_для_обучения(1).png" id="23_piao7"]
 [ext_resource type="AudioStream" uid="uid://byanaqei4w3ol" path="res://assets/SFX/puzirlopnul.ogg.mp3" id="26_gkc0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnrui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wygw7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vs5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_1mcha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xfdhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ego6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b4kka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6dhbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_02pmj")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 30.0
+}]
 
 [sub_resource type="Animation" id="Animation_c6we4"]
 length = 0.001
@@ -136,10 +173,168 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Phone:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Phone:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../UI/PhoneIcon:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../UI/Cog:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("%PhoneIcon/PopUp1:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("%PhoneIcon/PopUp1:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("%PhoneIcon/PopUp1:scale:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("%PhoneIcon/PopUp1:scale:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("%PhoneIcon/PopUp1:modulate:a")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("%PopUp2:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("%PopUp2:position:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("%PopUp2:scale:x")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("%PopUp2:scale:y")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/22/type = "bezier"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("%PopUp2:modulate:a")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_ipc65"]
 resource_name = "close_intro"
-length = 2.0
+length = 1.7
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -148,8 +343,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(579, -0.25, 0, 0.25, 0, 1176, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.933333)
+"points": PackedFloat32Array(579, -0.25, 0, 0.25, 0, 1065, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -159,8 +354,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0, 848, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.933333)
+"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0, 566, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -170,8 +365,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.57079, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.933333)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.610865, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6)
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -184,6 +379,54 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0.639216), Color(0, 0, 0, 0.639216), Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Phone:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.190389, 0.190389)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Phone:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../UI/PhoneIcon:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../UI/Cog:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_8osuk"]
@@ -310,57 +553,439 @@ tracks/8/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_o6xwg"]
+resource_name = "popup1_open"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PhoneIcon/PopUp1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-37, -0.25, 0, 0.25, 0, -293, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PhoneIcon/PopUp1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.00001, -0.25, 0, 0.25, 0, -13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PhoneIcon/PopUp1:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.101974, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PhoneIcon/PopUp1:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.101974, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%PhoneIcon/PopUp1:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667)
+}
+
+[sub_resource type="Animation" id="Animation_643ye"]
+resource_name = "popup1_close"
+length = 0.5
+step = 0.025
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PhoneIcon/PopUp1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0, -37, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PhoneIcon/PopUp1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0, -2.00001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PhoneIcon/PopUp1:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.101974, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PhoneIcon/PopUp1:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.101974, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%PhoneIcon/PopUp1:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_awb8w"]
+resource_name = "popup2_open"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PopUp2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-37, -0.25, 0, 0.25, 0, -293, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PopUp2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.00001, -0.25, 0, 0.25, 0, -13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PopUp2:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.101974, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PopUp2:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.101974, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%PopUp2:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667)
+}
+
+[sub_resource type="Animation" id="Animation_ld3jf"]
+resource_name = "popup2_close"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PopUp2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0, -37, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PopUp2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0, -2.00001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PopUp2:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.101974, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PopUp2:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.101974, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%PopUp2:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.000854455, 0.5)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_segve"]
 _data = {
 "RESET": SubResource("Animation_c6we4"),
 "close_intro": SubResource("Animation_ipc65"),
-"intro": SubResource("Animation_8osuk")
+"intro": SubResource("Animation_8osuk"),
+"popup1_close": SubResource("Animation_643ye"),
+"popup1_open": SubResource("Animation_o6xwg"),
+"popup2_close": SubResource("Animation_ld3jf"),
+"popup2_open": SubResource("Animation_awb8w")
 }
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wygw7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0vs5q"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("17_1mcha")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_xfdhc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_ego6v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_b4kka")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_6dhbe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_02pmj")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": false,
-"name": &"pressed",
-"speed": 15.0
-}]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_7v5kq")
 camera = NodePath("Camera")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
-stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_hs6e4"), ExtResource("10_hxlb3")])
+stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5"), ExtResource("10_wbb0d")])
 
-[node name="Фон" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(577, 325)
 texture = ExtResource("1_40xyu")
+metadata/_edit_lock_ = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Cog" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1064, 67)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_5kao6")
+
+[node name="PhoneIcon" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1064, 570)
+texture = ExtResource("23_piao7")
+
+[node name="PopUp1" type="Sprite2D" parent="UI/PhoneIcon"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-293, -13)
+texture = ExtResource("13_cnun7")
+metadata/_edit_group_ = true
+
+[node name="PopupLabel1" type="Label" parent="UI/PhoneIcon/PopUp1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -54.0
+offset_right = -344.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("14_3ih6u")
+theme_override_font_sizes/font_size = 27
+text = "Перед тобой твои сотрудники, у каждого 
+из них есть интересы. 
+"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="UI/PhoneIcon/PopUp1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -13.0
+offset_right = -344.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("14_3ih6u")
+theme_override_font_sizes/font_size = 27
+text = "Объедини всех в соответствии с интересами
+в правильной  последовательности, чтобы сформировать дружный коллектив."
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="UI/PhoneIcon/PopUp1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = 44.0
+offset_right = -330.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.299547, 0.299547, 0.299547, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("14_3ih6u")
+theme_override_font_sizes/font_size = 24
+text = "(кликни сюда, чтобы закрыть)"
+autowrap_mode = 3
+
+[node name="PopupButton1" type="Button" parent="UI/PhoneIcon/PopUp1"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -76.0
+offset_right = -262.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnrui")
+disabled = true
+
+[node name="PopUp2" type="Sprite2D" parent="UI/PhoneIcon"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-293, -13)
+texture = ExtResource("13_cnun7")
+metadata/_edit_group_ = true
+
+[node name="PopupLabel1" type="Label" parent="UI/PhoneIcon/PopUp2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -54.0
+offset_right = -344.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("14_3ih6u")
+theme_override_font_sizes/font_size = 33
+text = "О, новые сотрудники! Помни, что иногда для создания новых связей, нужно разорвать старые. 
+"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="UI/PhoneIcon/PopUp2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = 44.0
+offset_right = -330.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.299547, 0.299547, 0.299547, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("14_3ih6u")
+theme_override_font_sizes/font_size = 24
+text = "(кликни сюда, чтобы закрыть)"
+autowrap_mode = 3
+
+[node name="PopupButton2" type="Button" parent="UI/PhoneIcon/PopUp2"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -76.0
+offset_right = -262.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gnrui")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnrui")
+disabled = true
 
 [node name="Intro" type="CanvasLayer" parent="."]
+layer = 2
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
@@ -395,12 +1020,6 @@ visible = false
 position = Vector2(32, 160)
 texture = ExtResource("15_y1v3b")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_segve")
-}
-
 [node name="StartButton" type="Button" parent="Intro"]
 unique_name_in_owner = true
 offset_left = 869.0
@@ -429,31 +1048,39 @@ sprite_frames = SubResource("SpriteFrames_0vs5q")
 animation = &"pressed"
 
 [node name="Camera" parent="." instance=ExtResource("23_e663e")]
+metadata/_edit_lock_ = true
 
 [node name="StartDragging" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("20_wld1q")
 volume_db = -5.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("21_8l1br")
 autoplay = true
 parameters/looping = true
 
 [node name="Ambient" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("22_os0j2")
 autoplay = true
 parameters/looping = true
 
 [node name="Notification" type="AudioStreamPlayer2D" parent="."]
-visible = false
 
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("26_gkc0s")
 volume_db = -10.0
 
-[connection signal="animation_finished" from="Intro/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Intro")
+libraries = {
+"": SubResource("AnimationLibrary_segve")
+}
+
+[node name="PopUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_hethd")
+
+[connection signal="pressed" from="UI/PhoneIcon/PopUp1/PopupButton1" to="." method="_on_popup_button_1_pressed"]
+[connection signal="pressed" from="UI/PhoneIcon/PopUp2/PopupButton2" to="." method="_on_popup_button_2_pressed"]
 [connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

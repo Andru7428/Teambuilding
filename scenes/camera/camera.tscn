@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://chlnfl3wcfgv0"]
+[gd_scene load_steps=8 format=3 uid="uid://chlnfl3wcfgv0"]
 
 [ext_resource type="Script" path="res://scenes/camera/camera.gd" id="1_rqwhf"]
 
@@ -13,6 +13,12 @@ size = Vector2(2350, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sxbk"]
 size = Vector2(2350, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfti7"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_376ty"]
+radius = 250.0
 
 [node name="Camera" type="Node2D"]
 position = Vector2(576, 324)
@@ -43,3 +49,17 @@ position = Vector2(0, -376)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
 shape = SubResource("RectangleShape2D_7sxbk")
+
+[node name="Corner" type="StaticBody2D" parent="."]
+position = Vector2(627, -375)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corner"]
+shape = SubResource("CircleShape2D_vfti7")
+
+[node name="Corner2" type="StaticBody2D" parent="."]
+position = Vector2(627, 375)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corner2"]
+shape = SubResource("CircleShape2D_376ty")
