@@ -5,7 +5,7 @@ extends Node
 @export var stages: Array[Stage]
 @export var current_stage := 0
 
-enum States {BASE, CONNECTING, DRAGGING}
+enum States {BASE, CONNECTING, DRAGGING, INTRO, WAITING_CLICK}
 
 var current_state := States.BASE
 var current_connection_line: ConnectionLine
@@ -19,8 +19,9 @@ func _ready() -> void:
 		for i in range(current_stage + 1):
 			new_stage(stages[i])
 	else:
+		current_state = States.INTRO
 		$Intro.show()
-		%AnimationPlayer.play("phone")
+		%AnimationPlayer.play("intro")
 
 
 func _input(event: InputEvent) -> void:
@@ -39,7 +40,12 @@ func _input(event: InputEvent) -> void:
 				dragged_bubble = targeted_bubble
 				current_state = States.DRAGGING
 				$StartDragging.play()
-				
+		
+		if current_state == States.WAITING_CLICK:
+			$Intro.hide()
+			await get_tree().create_timer(1).timeout
+			new_stage(stages[current_stage])
+			current_state = States.BASE
 	
 	if event.is_action_released("left_mouse"):
 		if current_state == States.CONNECTING:
@@ -117,3 +123,8 @@ func _on_bubble_state_changed() -> void:
 	if current_stage + 1 < len(stages):
 		current_stage += 1
 		new_stage(stages[current_stage])
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "intro":
+		current_state = States.WAITING_CLICK

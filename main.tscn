@@ -81,7 +81,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_8osuk"]
-resource_name = "phone"
+resource_name = "intro"
 length = 10.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -183,7 +183,7 @@ tracks/6/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_segve"]
 _data = {
 "RESET": SubResource("Animation_c6we4"),
-"phone": SubResource("Animation_8osuk")
+"intro": SubResource("Animation_8osuk")
 }
 
 [node name="Main" type="Node"]
@@ -191,7 +191,6 @@ script = ExtResource("1_7v5kq")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
 stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5")])
-current_stage = 1
 
 [node name="Фон" type="Sprite2D" parent="."]
 z_index = -2
@@ -255,3 +254,5 @@ autoplay = true
 parameters/looping = true
 
 [node name="Notification" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="animation_finished" from="Intro/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
