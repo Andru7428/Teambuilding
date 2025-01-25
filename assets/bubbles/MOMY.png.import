@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v2m44yfmbupb"
-path="res://.godot/imported/galia2.png-48f13ed086c24d4a7319a6336aea42d2.ctex"
+uid="uid://cgvwpad8x6nex"
+path="res://.godot/imported/MOMY.png-5883d5f84f30d57ef82327f45260a85e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubbles/galia2.png"
-dest_files=["res://.godot/imported/galia2.png-48f13ed086c24d4a7319a6336aea42d2.ctex"]
+source_file="res://assets/bubbles/MOMY.png"
+dest_files=["res://.godot/imported/MOMY.png-5883d5f84f30d57ef82327f45260a85e.ctex"]
 
 [params]
 
