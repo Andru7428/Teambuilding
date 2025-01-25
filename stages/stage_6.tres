@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Stage" load_steps=8 format=3 uid="uid://clvgl8d4tbbbe"]
+[gd_resource type="Resource" script_class="Stage" load_steps=8 format=3 uid="uid://dnjqqmlfdjfap"]
 
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="1_cqb08"]
 [ext_resource type="Script" path="res://custom_resources/stage.gd" id="2_2c2uu"]

@@ -12,7 +12,7 @@
 radius = 110.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1654c"]
-radius = 110.0
+radius = 90.0
 
 [node name="Bubble" type="RigidBody2D" node_paths=PackedStringArray("visuals", "bubble", "art") groups=["bubble"]]
 lock_rotation = true

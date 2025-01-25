@@ -31,7 +31,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if dragging:
-		visuals.scale = visuals.scale.move_toward(Vector2(0.9, 0.9), 0.01)
+		visuals.scale = visuals.scale.move_toward(Vector2(0.8, 0.8), 0.01)
 	else:
 		visuals.scale = visuals.scale.move_toward(Vector2(0.7, 0.7), 0.01)
 	
