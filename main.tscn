@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=49 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -19,7 +19,9 @@
 [ext_resource type="FontFile" uid="uid://crgvwlhvjugun" path="res://assets/fonts/goosberry_version_02.otf" id="14_3ih6u"]
 [ext_resource type="Texture2D" uid="uid://2psu4tt4ekb4" path="res://assets/UI/сообщение_3(1).png" id="14_dw8lf"]
 [ext_resource type="Texture2D" uid="uid://b2jbwtdsyg8oe" path="res://assets/UI/сообщение_4(1).png" id="15_y1v3b"]
+[ext_resource type="Texture2D" uid="uid://du1ql5t52bxx0" path="res://assets/ending/ending.png" id="16_wwyi1"]
 [ext_resource type="Texture2D" uid="uid://b6pll2jkgnu5a" path="res://assets/UI/кнопка_начать(1).png" id="17_1mcha"]
+[ext_resource type="PackedScene" uid="uid://cqer4pl53yxen" path="res://scenes/game_menu/game_menu.tscn" id="17_kbo1c"]
 [ext_resource type="Texture2D" uid="uid://b0h3n82bsml3k" path="res://assets/UI/кнопка_начать(2).png" id="18_xfdhc"]
 [ext_resource type="Texture2D" uid="uid://djaytw2f43aij" path="res://assets/UI/кнопка_начать(3).png" id="19_ego6v"]
 [ext_resource type="Texture2D" uid="uid://b6a5xhj4j0dk5" path="res://assets/UI/кнопка_начать(4).png" id="20_b4kka"]
@@ -32,6 +34,9 @@
 [ext_resource type="PackedScene" uid="uid://chlnfl3wcfgv0" path="res://scenes/camera/camera.tscn" id="23_e663e"]
 [ext_resource type="Texture2D" uid="uid://bcr4jm52d4y7s" path="res://assets/UI/Иконка_телефона_для_обучения(1).png" id="23_piao7"]
 [ext_resource type="AudioStream" uid="uid://byanaqei4w3ol" path="res://assets/SFX/puzirlopnul.ogg.mp3" id="26_gkc0s"]
+[ext_resource type="AudioStream" uid="uid://cwb00sh68k7ma" path="res://assets/SFX/etapproiden.ogg.mp3" id="29_l82nj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_428pa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnrui"]
 
@@ -68,267 +73,256 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_c6we4"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Phone:rotation")
+tracks/0/path = NodePath("Phone/Message3:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Phone:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(579, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Phone:position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(323, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Phone/Message3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phone/Message4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.639216)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StartButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(869, 659)]
+}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Phone/Message4:visible")
+tracks/4/path = NodePath("%StartButton:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ColorRect:color")
+tracks/5/path = NodePath("Phone/Message2:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.639216)]
+"update": 1,
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("StartButton:position")
+tracks/6/enabled = false
+tracks/6/path = NodePath("Phone:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(869, 659)]
+"values": [Vector2(1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("%StartButton:disabled")
+tracks/7/enabled = false
+tracks/7/path = NodePath("Phone:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Phone/Message2:visible")
+tracks/8/path = NodePath("../UI/PhoneIcon:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Phone:scale")
+tracks/9/path = NodePath("../UI/Cog:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
-tracks/10/type = "value"
+tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Phone:modulate")
+tracks/10/path = NodePath("%PhoneIcon/PopUp1:position:x")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/11/type = "value"
+tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../UI/PhoneIcon:modulate")
+tracks/11/path = NodePath("%PhoneIcon/PopUp1:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/12/type = "value"
+tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../UI/Cog:modulate")
+tracks/12/path = NodePath("%PhoneIcon/PopUp1:scale:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("%PhoneIcon/PopUp1:position:x")
+tracks/13/path = NodePath("%PhoneIcon/PopUp1:scale:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/14/type = "bezier"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("%PhoneIcon/PopUp1:position:y")
+tracks/14/path = NodePath("%PhoneIcon/PopUp1:modulate:a")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/15/type = "bezier"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("%PhoneIcon/PopUp1:scale:x")
+tracks/15/path = NodePath("%PopUp2:position:x")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/16/type = "bezier"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("%PhoneIcon/PopUp1:scale:y")
+tracks/16/path = NodePath("%PopUp2:position:y")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/17/type = "bezier"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("%PhoneIcon/PopUp1:modulate:a")
+tracks/17/path = NodePath("%PopUp2:scale:x")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/18/type = "bezier"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("%PopUp2:position:x")
+tracks/18/path = NodePath("%PopUp2:scale:y")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-293, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/19/type = "bezier"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("%PopUp2:position:y")
+tracks/19/path = NodePath("%PopUp2:modulate:a")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-13, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/20/type = "bezier"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("%PopUp2:scale:x")
+tracks/20/path = NodePath("%Ending:modulate:a")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/21/type = "bezier"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("%PopUp2:scale:y")
+tracks/21/path = NodePath("ColorRect:color:a")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/22/type = "bezier"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("%PopUp2:modulate:a")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.639216, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -431,7 +425,8 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_8osuk"]
 resource_name = "intro"
-length = 12.0
+length = 14.0
+step = 0.025
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -441,7 +436,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1176, -0.25, 0, 0.25, 0, 579, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.733333, 2)
+"times": PackedFloat32Array(1.675, 2.65)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -452,7 +447,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(848, -0.25, 0, 0.25, 0, 323, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.733333, 2)
+"times": PackedFloat32Array(1.675, 2.65)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -463,7 +458,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1.57079, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.733333, 2)
+"times": PackedFloat32Array(1.675, 2.65)
 }
 tracks/3/type = "audio"
 tracks/3/imported = false
@@ -489,7 +484,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("20_hethd")
 }],
-"times": PackedFloat32Array(0, 3.9, 5.26667, 7.6)
+"times": PackedFloat32Array(0, 4.55, 5.91667, 8.25)
 }
 tracks/3/use_blend = true
 tracks/4/type = "value"
@@ -499,7 +494,7 @@ tracks/4/path = NodePath("Phone/Message2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.9),
+"times": PackedFloat32Array(0, 4.55),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -511,7 +506,7 @@ tracks/5/path = NodePath("Phone/Message3:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 5.27667),
+"times": PackedFloat32Array(0, 5.92667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -523,7 +518,7 @@ tracks/6/path = NodePath("Phone/Message4:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 7.6),
+"times": PackedFloat32Array(0, 8.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -535,7 +530,7 @@ tracks/7/path = NodePath("StartButton:position")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(8.06667, 8.73333, 9.4, 9.96667, 10.5333),
+"times": PackedFloat32Array(8.71667, 9.38333, 10.05, 10.6167, 11.1833),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(869, 659), Vector2(937, 595), Vector2(854, 548), Vector2(942, 503), Vector2(893, 426)]
@@ -547,10 +542,21 @@ tracks/8/path = NodePath("%StartButton:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 9.93333),
+"times": PackedFloat32Array(0, 10.5833),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect:color:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.639216, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05)
 }
 
 [sub_resource type="Animation" id="Animation_o6xwg"]
@@ -790,10 +796,25 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0.000854455, 0.5)
 }
 
+[sub_resource type="Animation" id="Animation_2576w"]
+resource_name = "ending"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Ending:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_segve"]
 _data = {
 "RESET": SubResource("Animation_c6we4"),
 "close_intro": SubResource("Animation_ipc65"),
+"ending": SubResource("Animation_2576w"),
 "intro": SubResource("Animation_8osuk"),
 "popup1_close": SubResource("Animation_643ye"),
 "popup1_open": SubResource("Animation_o6xwg"),
@@ -807,6 +828,7 @@ camera = NodePath("Camera")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
 stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5"), ExtResource("10_wbb0d")])
+skip_intro = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
@@ -822,6 +844,29 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(1064, 67)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_5kao6")
+
+[node name="SettingsButton" type="Button" parent="UI/Cog"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -49.5
+offset_right = -53.0
+offset_bottom = -49.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_428pa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_428pa")
 
 [node name="PhoneIcon" type="Sprite2D" parent="UI"]
 unique_name_in_owner = true
@@ -984,6 +1029,16 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gnrui")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gnrui")
 disabled = true
 
+[node name="Ending" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(576, 324)
+texture = ExtResource("16_wwyi1")
+
+[node name="GameMenu" parent="UI" instance=ExtResource("17_kbo1c")]
+unique_name_in_owner = true
+
 [node name="Intro" type="CanvasLayer" parent="."]
 layer = 2
 visible = false
@@ -997,27 +1052,30 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.639216)
 
 [node name="Phone" type="Sprite2D" parent="Intro"]
-position = Vector2(579, 323)
+position = Vector2(600, 1088)
 texture = ExtResource("11_6imnq")
-metadata/_edit_group_ = true
 
 [node name="Message1" type="Sprite2D" parent="Intro/Phone"]
-position = Vector2(0, -120)
+position = Vector2(0.689697, -123.085)
+scale = Vector2(0.51, 0.51)
 texture = ExtResource("12_qqu2y")
 
 [node name="Message2" type="Sprite2D" parent="Intro/Phone"]
 visible = false
-position = Vector2(40, -35)
+position = Vector2(39.0002, -41.9998)
+scale = Vector2(0.51, 0.51)
 texture = ExtResource("13_28ad4")
 
 [node name="Message3" type="Sprite2D" parent="Intro/Phone"]
 visible = false
-position = Vector2(0, 72)
+position = Vector2(0.567688, 68.4939)
+scale = Vector2(0.51, 0.51)
 texture = ExtResource("14_dw8lf")
 
 [node name="Message4" type="Sprite2D" parent="Intro/Phone"]
 visible = false
-position = Vector2(32, 160)
+position = Vector2(40.999, 159)
+scale = Vector2(0.51, 0.51)
 texture = ExtResource("15_y1v3b")
 
 [node name="StartButton" type="Button" parent="Intro"]
@@ -1053,22 +1111,27 @@ metadata/_edit_lock_ = true
 [node name="StartDragging" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_wld1q")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_8l1br")
 autoplay = true
+bus = &"music"
 parameters/looping = true
 
 [node name="Ambient" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_os0j2")
 autoplay = true
+bus = &"music"
 parameters/looping = true
 
 [node name="Notification" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_gkc0s")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -1079,7 +1142,14 @@ libraries = {
 
 [node name="PopUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_hethd")
+bus = &"SFX"
 
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_l82nj")
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="pressed" from="UI/Cog/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="UI/PhoneIcon/PopUp1/PopupButton1" to="." method="_on_popup_button_1_pressed"]
 [connection signal="pressed" from="UI/PhoneIcon/PopUp2/PopupButton2" to="." method="_on_popup_button_2_pressed"]
 [connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]

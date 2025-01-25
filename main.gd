@@ -7,7 +7,7 @@ extends Node
 @export var current_stage := 0 : set = _set_current_stage
 @export var skip_intro := false
 
-enum States {BASE, CONNECTING, DRAGGING, INTRO, WAITING_CLICK}
+enum States {BASE, CONNECTING, DRAGGING, INTRO, WAITING_CLICK, ENDING}
 
 var current_state := States.BASE
 var current_connection_line: ConnectionLine
@@ -132,6 +132,14 @@ func _on_bubble_state_changed() -> void:
 	if current_stage + 1 < len(stages):
 		current_stage += 1
 		new_stage(stages[current_stage])
+	else:
+		current_state = States.ENDING
+		$WinSound.play()
+		for bubble in bubbles:
+			bubble.visuals.scale = Vector2(0.9, 0.9)
+		await get_tree().create_timer(1).timeout
+		%AnimationPlayer.play("ending")
+		%Ending.show()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -197,3 +205,7 @@ func _on_popup_button_2_pressed() -> void:
 	$PopUpSound.play()
 	%PopupButton2.disabled = true
 	%AnimationPlayer.play("popup2_close")
+
+
+func _on_settings_button_pressed() -> void:
+	%GameMenu.show()

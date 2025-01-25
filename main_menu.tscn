@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://1ikqr46gkx6y"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_276q5"]
+[ext_resource type="Texture2D" uid="uid://b5p2qwteyogqe" path="res://assets/background/фон_меню.jpg" id="1_l4bit"]
+[ext_resource type="Texture2D" uid="uid://cuxdicjxcbutf" path="res://assets/UI/не_активная_кнопка.png" id="2_arvf2"]
+[ext_resource type="FontFile" uid="uid://crgvwlhvjugun" path="res://assets/fonts/goosberry_version_02.otf" id="2_yg6cr"]
+[ext_resource type="Texture2D" uid="uid://cq6vb5egc7t8g" path="res://assets/UI/активная_кнопка.png" id="3_1d7ab"]
+[ext_resource type="AudioStream" uid="uid://cexdtiai8ynb" path="res://assets/SFX/objedinenie.ogg.mp3" id="5_w8wos"]
+[ext_resource type="AudioStream" uid="uid://cap4hg80j4syw" path="res://assets/music/menu.ogg.mp3" id="6_31er2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3clv8"]
+texture = ExtResource("2_arvf2")
+texture_margin_top = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0flx6"]
+texture = ExtResource("3_1d7ab")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_276q5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l4bit")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 353.0
+offset_right = 320.0
+offset_bottom = 457.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_yg6cr")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = SubResource("StyleBoxTexture_3clv8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0flx6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3clv8")
+text = "ИГРАТЬ"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 469.0
+offset_right = 283.0
+offset_bottom = 565.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_yg6cr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxTexture_3clv8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0flx6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3clv8")
+text = "ВЫХОД"
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_w8wos")
+volume_db = -15.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_31er2")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

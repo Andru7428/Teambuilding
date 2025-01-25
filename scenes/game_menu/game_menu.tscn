@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqer4pl53yxen"]
+
+[ext_resource type="Script" path="res://scenes/game_menu/game_menu.gd" id="1_cgcvn"]
+[ext_resource type="FontFile" uid="uid://crgvwlhvjugun" path="res://assets/fonts/goosberry_version_02.otf" id="1_etwlj"]
+[ext_resource type="Texture2D" uid="uid://cuxdicjxcbutf" path="res://assets/UI/не_активная_кнопка.png" id="2_7fnpx"]
+[ext_resource type="Texture2D" uid="uid://cq6vb5egc7t8g" path="res://assets/UI/активная_кнопка.png" id="3_0foxw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8i73"]
+bg_color = Color(0.180392, 0.219608, 0.458824, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.521569, 0.521569, 0.847059, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdnoi"]
+texture = ExtResource("2_7fnpx")
+texture_margin_top = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsosf"]
+texture = ExtResource("3_0foxw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kn4f7"]
+texture = ExtResource("2_7fnpx")
+texture_margin_top = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avic6"]
+texture = ExtResource("3_0foxw")
+
+[node name="GameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cgcvn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.5
+offset_top = -96.0
+offset_right = 241.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8i73")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 22.0
+offset_right = -23.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_etwlj")
+theme_override_font_sizes/font_size = 30
+text = "Музыка"
+
+[node name="MusicSlider" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.86
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_etwlj")
+theme_override_font_sizes/font_size = 30
+text = "Звуки"
+
+[node name="SFXSlider" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.86
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartButton" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_etwlj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_fdnoi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fsosf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fdnoi")
+text = "ПРОДОЛЖИТЬ"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_etwlj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_kn4f7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_avic6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kn4f7")
+text = "ВЫХОД"
+
+[connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer3/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

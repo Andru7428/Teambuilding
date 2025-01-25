@@ -44,13 +44,16 @@ shape = SubResource("CircleShape2D_1654c")
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_lbsdh")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="NotHappySound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_t88d1")
+bus = &"SFX"
 
 [node name="NewSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1i3ne")
 volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
