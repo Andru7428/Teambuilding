@@ -13,8 +13,10 @@ var targeted_interest: Interest
 var targeted_bubble: Bubble
 var dragged_bubble: Bubble
 
+
 func _ready() -> void:
-	new_stage(stages[current_stage])
+	for i in range(current_stage + 1):
+		new_stage(stages[i])
 
 
 func _input(event: InputEvent) -> void:
@@ -105,9 +107,8 @@ func _on_bubble_mouse_exited(_bubble: Bubble) -> void:
 func _on_bubble_state_changed() -> void:
 	var bubbles = get_tree().get_nodes_in_group("bubble")
 	for bubble in bubbles:
-		print(bubble.happy)
-		print(bubble.connected_to_main)
 		if !bubble.happy:
 			return
-	current_stage += 1
-	new_stage(stages[current_stage])
+	if current_stage + 1 < len(stages):
+		current_stage += 1
+		new_stage(stages[current_stage])
