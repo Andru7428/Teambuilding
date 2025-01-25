@@ -1,13 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=21 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
 [ext_resource type="PackedScene" uid="uid://bhs4f64u7oqsv" path="res://scenes/bubble/bubble.tscn" id="2_aa7kx"]
-[ext_resource type="Resource" uid="uid://cmoe4ygeyi4x0" path="res://bubbles/bubble_1.tres" id="2_sw4j1"]
-[ext_resource type="Resource" uid="uid://b0a71m858jxvk" path="res://bubbles/bubble_2.tres" id="3_dpnqa"]
 [ext_resource type="PackedScene" uid="uid://dggbo8v7of0vs" path="res://scenes/connection_line/connection_line.tscn" id="3_jey7f"]
-[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="3_ux80d"]
-[ext_resource type="Resource" uid="uid://xfbsxkoly6pi" path="res://bubbles/bubble_3.tres" id="4_m1i5k"]
+[ext_resource type="Script" path="res://custom_resources/stage.gd" id="4_x8dlc"]
+[ext_resource type="Resource" uid="uid://dj58b7oyiuxsc" path="res://stages/stage_1.tres" id="5_mafwm"]
 [ext_resource type="Texture2D" uid="uid://bcr4jm52d4y7s" path="res://assets/UI/Иконка_телефона_для_обучения(1).png" id="9_3o2cu"]
 [ext_resource type="Texture2D" uid="uid://bvo75om4orsxr" path="res://assets/UI/шестерня(1).png" id="10_c04jh"]
 [ext_resource type="Texture2D" uid="uid://c8lnsiscsn8mp" path="res://assets/UI/Телфон(1).png" id="11_6imnq"]
@@ -55,7 +53,7 @@ animations = [{
 script = ExtResource("1_7v5kq")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
-bubbles = Array[ExtResource("3_ux80d")]([ExtResource("2_sw4j1"), ExtResource("3_dpnqa"), ExtResource("4_m1i5k")])
+stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm")])
 
 [node name="Фон" type="Sprite2D" parent="."]
 z_index = -2

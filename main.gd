@@ -2,7 +2,8 @@ extends Node
 
 @export var bubble_scene: PackedScene
 @export var connection_line_scene: PackedScene
-@export var bubbles: Array[BubbleData]
+@export var stages: Array[Stage]
+@export var current_stage := 0
 
 enum States {BASE, CONNECTING, DRAGGING}
 
@@ -13,19 +14,7 @@ var targeted_bubble: Bubble
 var dragged_bubble: Bubble
 
 func _ready() -> void:
-	for bubble_data in bubbles:
-		var new_bubble = create_bubble(bubble_data)
-		new_bubble.bubble_mouse_entered.connect(_on_bubble_mouse_entered)
-		new_bubble.bubble_mouse_exited.connect(_on_bubble_mouse_exited)
-		new_bubble.state_changed.connect(_on_bubble_state_changed)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	#var bubbles = get_tree().get_nodes_in_group("bubble")
-	#for bubble in bubbles:
-	#	print(bubble.happy)
-	pass
+	new_stage(stages[current_stage])
 
 
 func _input(event: InputEvent) -> void:
@@ -89,6 +78,14 @@ func create_bubble(bubble_data: BubbleData) -> Bubble:
 	return new_bubble
 
 
+func new_stage(stage: Stage) -> void:
+	for bubble_data in stage.new_bubbles:
+		var new_bubble = create_bubble(bubble_data)
+		new_bubble.bubble_mouse_entered.connect(_on_bubble_mouse_entered)
+		new_bubble.bubble_mouse_exited.connect(_on_bubble_mouse_exited)
+		new_bubble.state_changed.connect(_on_bubble_state_changed)
+
+
 func _on_interest_mouse_entered(interest: Interest) -> void:
 	targeted_interest = interest
 
@@ -112,4 +109,5 @@ func _on_bubble_state_changed() -> void:
 		print(bubble.connected_to_main)
 		if !bubble.happy:
 			return
-	print("all happy")
+	current_stage += 1
+	new_stage(stages[current_stage])
