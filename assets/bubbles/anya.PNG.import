@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djj4u81nofcwd"
-path="res://.godot/imported/andrei.PNG-a698b8aa376087b4a508322685437ed6.ctex"
+uid="uid://blm0kcrj0jhjb"
+path="res://.godot/imported/anya.PNG-4546224d4376577070a6e419e15b6444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/andrei.PNG"
-dest_files=["res://.godot/imported/andrei.PNG-a698b8aa376087b4a508322685437ed6.ctex"]
+source_file="res://assets/bubbles/anya.PNG"
+dest_files=["res://.godot/imported/anya.PNG-4546224d4376577070a6e419e15b6444.ctex"]
 
 [params]
 

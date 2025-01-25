@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpwbh21nvjym8"
-path="res://.godot/imported/galia.PNG-c5bc1baa365982a7b4421bd9404743a1.ctex"
+uid="uid://cy1r52oe6l4x5"
+path="res://.godot/imported/polina2.PNG-61f04912cc1beb168337e42199d3bf42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/galia.PNG"
-dest_files=["res://.godot/imported/galia.PNG-c5bc1baa365982a7b4421bd9404743a1.ctex"]
+source_file="res://assets/bubbles/polina2.PNG"
+dest_files=["res://.godot/imported/polina2.PNG-61f04912cc1beb168337e42199d3bf42.ctex"]
 
 [params]
 

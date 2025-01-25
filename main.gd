@@ -44,9 +44,15 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("left_mouse"):
 		if current_state == States.CONNECTING:
 			if targeted_interest == null:
-				current_connection_line.queue_free()
+				current_connection_line.remove()
 			else:
-				current_connection_line.ending_interest = targeted_interest
+				if current_connection_line.starting_interest.interest_data.resource_path == targeted_interest.interest_data.resource_path \
+				and current_connection_line.starting_interest != targeted_interest:
+					if targeted_interest.connection != null:
+						targeted_interest.connection.remove()
+					current_connection_line.ending_interest = targeted_interest
+				else:
+					current_connection_line.remove()
 			current_state = States.BASE
 		
 		if current_state == States.DRAGGING:

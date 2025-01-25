@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bytdcm61i37in"
-path="res://.godot/imported/sad2.PNG-c1ea67ae7c0fcc4637c8146ad25014af.ctex"
+uid="uid://n5vnncu0mk7n"
+path="res://.godot/imported/asian2.PNG-224582085c3fc7516428c87bdc143584.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/sad2.PNG"
-dest_files=["res://.godot/imported/sad2.PNG-c1ea67ae7c0fcc4637c8146ad25014af.ctex"]
+source_file="res://assets/bubbles/asian2.PNG"
+dest_files=["res://.godot/imported/asian2.PNG-224582085c3fc7516428c87bdc143584.ctex"]
 
 [params]
 

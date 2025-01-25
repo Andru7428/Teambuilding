@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djff6aoligm74"
-path="res://.godot/imported/galia2.PNG-9e9e8632b8cf1968cb1030ec761c6778.ctex"
+path="res://.godot/imported/galia2.PNG-7f0103d45df4fcf75114e0c7b056b109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/galia2.PNG"
-dest_files=["res://.godot/imported/galia2.PNG-9e9e8632b8cf1968cb1030ec761c6778.ctex"]
+source_file="res://assets/bubbles/galia2.PNG"
+dest_files=["res://.godot/imported/galia2.PNG-7f0103d45df4fcf75114e0c7b056b109.ctex"]
 
 [params]
 

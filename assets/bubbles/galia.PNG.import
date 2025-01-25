@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj5ktay2eii60"
-path="res://.godot/imported/eliott.PNG-5bb0b04c510f1eea543a64e853cb754b.ctex"
+uid="uid://cpwbh21nvjym8"
+path="res://.godot/imported/galia.PNG-02446a5a67b922d4e35418a92a2e7f88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/eliott.PNG"
-dest_files=["res://.godot/imported/eliott.PNG-5bb0b04c510f1eea543a64e853cb754b.ctex"]
+source_file="res://assets/bubbles/galia.PNG"
+dest_files=["res://.godot/imported/galia.PNG-02446a5a67b922d4e35418a92a2e7f88.ctex"]
 
 [params]
 

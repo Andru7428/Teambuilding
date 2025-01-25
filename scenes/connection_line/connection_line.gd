@@ -41,6 +41,7 @@ func ease_out(number: float) -> float:
 
 func _set_starting_interest(value: Interest) -> void:
 	starting_interest = value
+	starting_interest.connection = self
 	default_color = _get_avg_color(value)
 
 
@@ -49,6 +50,8 @@ func _set_ending_interest(value: Interest) -> void:
 	if starting_interest == ending_interest \
 	or starting_interest.interest_data.resource_path != ending_interest.interest_data.resource_path:
 		remove()
+	ending_interest.connection = self
+	starting_interest.connection = self
 
 
 func _get_avg_color(interest: Interest) -> Color:

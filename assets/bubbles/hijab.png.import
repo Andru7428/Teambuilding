@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b586c0ojfv11c"
-path="res://.godot/imported/hijab.png-9e4af2e4b834ff78fb9b8250fbb760c7.ctex"
+path="res://.godot/imported/hijab.PNG-151259cbeb8cf3e764996c7baeb8852b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubbles/hijab.png"
-dest_files=["res://.godot/imported/hijab.png-9e4af2e4b834ff78fb9b8250fbb760c7.ctex"]
+source_file="res://assets/bubbles/hijab.PNG"
+dest_files=["res://.godot/imported/hijab.PNG-151259cbeb8cf3e764996c7baeb8852b.ctex"]
 
 [params]
 

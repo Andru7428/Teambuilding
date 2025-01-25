@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1r52oe6l4x5"
-path="res://.godot/imported/polina2.PNG-7922da5c057444c3d2f489370ce4b047.ctex"
+uid="uid://lv3llnf3w470"
+path="res://.godot/imported/polina.PNG-9af18f004a48b704697c77d953b35203.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/polina2.PNG"
-dest_files=["res://.godot/imported/polina2.PNG-7922da5c057444c3d2f489370ce4b047.ctex"]
+source_file="res://assets/bubbles/polina.PNG"
+dest_files=["res://.godot/imported/polina.PNG-9af18f004a48b704697c77d953b35203.ctex"]
 
 [params]
 

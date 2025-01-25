@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cihcrk1qhs7jn"
-path="res://.godot/imported/dasha.PNG-c4564b3a5020e2591c02006261dc0a8e.ctex"
+uid="uid://bj5ktay2eii60"
+path="res://.godot/imported/eliott.PNG-f474b265081024dc144e43bb87a46fa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubbles/dasha.PNG"
-dest_files=["res://.godot/imported/dasha.PNG-c4564b3a5020e2591c02006261dc0a8e.ctex"]
+source_file="res://assets/bubbles/eliott.PNG"
+dest_files=["res://.godot/imported/eliott.PNG-f474b265081024dc144e43bb87a46fa2.ctex"]
 
 [params]
 

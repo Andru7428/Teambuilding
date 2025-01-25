@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/bubble/bubble.gd" id="1_hmjej"]
 [ext_resource type="PackedScene" uid="uid://boambdev0eyrd" path="res://scenes/interest/interest.tscn" id="2_6ca8x"]
-[ext_resource type="Texture2D" uid="uid://cxbfgvtqo7uy8" path="res://assets/bubbles/blonde2.png" id="3_3qnpw"]
-[ext_resource type="Texture2D" uid="uid://e8t0s13053hy" path="res://assets/bubbles/bubble.png" id="4_c52kd"]
+[ext_resource type="Texture2D" uid="uid://dacgrh4tlvy1q" path="res://assets/bubbles/blonde2.png" id="3_3qnpw"]
+[ext_resource type="Texture2D" uid="uid://c527ll3wxj5xi" path="res://assets/bubbles/bubble.png" id="4_c52kd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcouu"]
 radius = 110.0
@@ -11,10 +11,10 @@ radius = 110.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1654c"]
 radius = 110.0
 
-[node name="Node" type="RigidBody2D" node_paths=PackedStringArray("circle", "art")]
+[node name="Node" type="RigidBody2D" node_paths=PackedStringArray("bubble", "art")]
 lock_rotation = true
 script = ExtResource("1_hmjej")
-circle = NodePath("")
+bubble = NodePath("Bubble")
 art = NodePath("Art")
 interest_scene = ExtResource("2_6ca8x")
 
@@ -25,7 +25,6 @@ texture = ExtResource("3_3qnpw")
 texture = ExtResource("4_c52kd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_gcouu")
 
 [node name="Area2D" type="Area2D" parent="."]
