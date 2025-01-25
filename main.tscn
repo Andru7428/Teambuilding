@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=34 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://buxina0ib1f4h" path="res://assets/music/fon.ogg.mp3" id="21_8l1br"]
 [ext_resource type="Texture2D" uid="uid://0n6o0mbmlaak" path="res://assets/UI/кнопка_начать(6).png" id="22_02pmj"]
 [ext_resource type="AudioStream" uid="uid://nxwl15ewrs83" path="res://assets/music/zwukofisa.ogg.mp3" id="22_os0j2"]
+[ext_resource type="PackedScene" uid="uid://chlnfl3wcfgv0" path="res://scenes/camera/camera.tscn" id="23_e663e"]
 [ext_resource type="AudioStream" uid="uid://byanaqei4w3ol" path="res://assets/SFX/puzirlopnul.ogg.mp3" id="26_gkc0s"]
 
 [sub_resource type="Animation" id="Animation_c6we4"]
@@ -346,17 +347,18 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_7v5kq")
+camera = NodePath("Camera")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
 stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5")])
+current_stage = 4
 
 [node name="Фон" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(589, 339)
+position = Vector2(577, 325)
 texture = ExtResource("1_40xyu")
-metadata/_edit_lock_ = true
 
 [node name="Intro" type="CanvasLayer" parent="."]
 visible = false
@@ -426,23 +428,30 @@ position = Vector2(89, 91)
 sprite_frames = SubResource("SpriteFrames_0vs5q")
 animation = &"pressed"
 
+[node name="Camera" parent="." instance=ExtResource("23_e663e")]
+
 [node name="StartDragging" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("20_wld1q")
 volume_db = -5.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("21_8l1br")
 autoplay = true
 parameters/looping = true
 
 [node name="Ambient" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("22_os0j2")
 autoplay = true
 parameters/looping = true
 
 [node name="Notification" type="AudioStreamPlayer2D" parent="."]
+visible = false
 
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("26_gkc0s")
 volume_db = -10.0
 

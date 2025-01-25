@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cgjrjgghxwl6k" path="res://assets/bubbles/nerd.PNG" id="2_h2c6m"]
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_lrsai"]
 [ext_resource type="Resource" uid="uid://kto7fn6m8nav" path="res://interests/music.tres" id="4_12u2x"]
-[ext_resource type="Resource" uid="uid://dudn81llwvnmy" path="res://interests/butterfly.tres" id="5_26sf6"]
+[ext_resource type="Resource" path="res://interests/butterfly.tres" id="5_26sf6"]
 
 [resource]
 script = ExtResource("2_lrsai")
