@@ -1,9 +1,16 @@
-[gd_resource type="Resource" script_class="BubbleData" load_steps=3 format=3 uid="uid://bxvt0b4ls8syl"]
+[gd_resource type="Resource" script_class="BubbleData" load_steps=8 format=3 uid="uid://bxvt0b4ls8syl"]
 
 [ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_1nhph"]
+[ext_resource type="Texture2D" uid="uid://cs16wppbm61vy" path="res://assets/bubbles/eliott2.PNG" id="1_v7kuq"]
 [ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_7g1kn"]
+[ext_resource type="Texture2D" uid="uid://bj5ktay2eii60" path="res://assets/bubbles/eliott.PNG" id="2_nq6qm"]
+[ext_resource type="Resource" uid="uid://dudn81llwvnmy" path="res://interests/butterfly.tres" id="4_nrqao"]
+[ext_resource type="Resource" uid="uid://btgjfoki7boxa" path="res://interests/plants.tres" id="5_jh4g7"]
+[ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="6_qfq4t"]
 
 [resource]
 script = ExtResource("2_7g1kn")
-interests = Array[ExtResource("1_1nhph")]([])
+art_sad = ExtResource("2_nq6qm")
+art_happy = ExtResource("1_v7kuq")
+interests = Array[ExtResource("1_1nhph")]([ExtResource("4_nrqao"), ExtResource("5_jh4g7"), ExtResource("6_qfq4t")])
 main = false
