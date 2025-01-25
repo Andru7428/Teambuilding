@@ -359,6 +359,7 @@ texture = ExtResource("1_40xyu")
 metadata/_edit_lock_ = true
 
 [node name="Intro" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
 anchors_preset = 15

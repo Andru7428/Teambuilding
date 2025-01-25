@@ -4,6 +4,7 @@ extends Node
 @export var connection_line_scene: PackedScene
 @export var stages: Array[Stage]
 @export var current_stage := 0
+@export var skip_intro := false
 
 enum States {BASE, CONNECTING, DRAGGING, INTRO, WAITING_CLICK}
 
@@ -14,8 +15,9 @@ var targeted_bubble: Bubble
 var dragged_bubble: Bubble
 
 
+
 func _ready() -> void:
-	if current_stage > 0:
+	if skip_intro:
 		for i in range(current_stage + 1):
 			new_stage(stages[i])
 	else:
