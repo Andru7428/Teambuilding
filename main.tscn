@@ -828,7 +828,6 @@ camera = NodePath("Camera")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
 stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5"), ExtResource("10_wbb0d")])
-skip_intro = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
