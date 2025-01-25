@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl578y244g6p7"
-path="res://.godot/imported/blonde.png-3af00cdae74e52ae766e3c81c87a441e.ctex"
+uid="uid://b6pll2jkgnu5a"
+path="res://.godot/imported/кнопка_начать(1).png-80e4b258c4e4a0c070339cf8eebc82e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubbles/blonde.png"
-dest_files=["res://.godot/imported/blonde.png-3af00cdae74e52ae766e3c81c87a441e.ctex"]
+source_file="res://assets/UI/кнопка_начать(1).png"
+dest_files=["res://.godot/imported/кнопка_начать(1).png-80e4b258c4e4a0c070339cf8eebc82e4.ctex"]
 
 [params]
 
