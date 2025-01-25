@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BubbleData" load_steps=8 format=3 uid="uid://cmikst04k76m8"]
+
+[ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_ovru5"]
+[ext_resource type="Texture2D" uid="uid://w1601s2juyp1" path="res://assets/bubbles/guy2.PNG" id="1_w84ub"]
+[ext_resource type="Texture2D" uid="uid://4vk6ks41os6u" path="res://assets/bubbles/guy.PNG" id="2_70qke"]
+[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_6773l"]
+[ext_resource type="Resource" uid="uid://dudn81llwvnmy" path="res://interests/butterfly.tres" id="4_6x1dq"]
+[ext_resource type="Resource" uid="uid://btgjfoki7boxa" path="res://interests/plants.tres" id="5_jcdhb"]
+[ext_resource type="Resource" uid="uid://cmnj6n0thkrdw" path="res://interests/sport.tres" id="6_amf01"]
+
+[resource]
+script = ExtResource("2_6773l")
+art_sad = ExtResource("2_70qke")
+art_happy = ExtResource("1_w84ub")
+interests = Array[ExtResource("1_ovru5")]([ExtResource("4_6x1dq"), ExtResource("5_jcdhb"), ExtResource("6_amf01")])
+main = false

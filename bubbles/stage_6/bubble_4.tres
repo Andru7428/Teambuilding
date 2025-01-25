@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BubbleData" load_steps=3 format=3 uid="uid://erbck1lppoie"]
+
+[ext_resource type="Script" path="res://custom_resources/interest_data.gd" id="1_2noux"]
+[ext_resource type="Script" path="res://custom_resources/bubble_data.gd" id="2_uve4w"]
+
+[resource]
+script = ExtResource("2_uve4w")
+interests = Array[ExtResource("1_2noux")]([])
+main = false
