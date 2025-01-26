@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvo75om4orsxr"
-path="res://.godot/imported/шестерня(1).png-a400e655912263922322bb3f57246e84.ctex"
+uid="uid://ns405xadll1j"
+path="res://.godot/imported/шестерня(1).png-6029d5b4d54bd0b280cf0e78d4f86999.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/шестерня(1).png"
-dest_files=["res://.godot/imported/шестерня(1).png-a400e655912263922322bb3f57246e84.ctex"]
+source_file="res://assets/шестерня(1).png"
+dest_files=["res://.godot/imported/шестерня(1).png-6029d5b4d54bd0b280cf0e78d4f86999.ctex"]
 
 [params]
 
