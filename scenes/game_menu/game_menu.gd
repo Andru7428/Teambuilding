@@ -20,6 +20,7 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
+	$ButtonSound.play()
 	self.hide()
 
 

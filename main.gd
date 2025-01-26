@@ -210,4 +210,5 @@ func _on_popup_button_2_pressed() -> void:
 
 
 func _on_settings_button_pressed() -> void:
+	$StartDragging.play()
 	%GameMenu.show()

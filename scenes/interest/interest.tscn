@@ -7,6 +7,7 @@
 radius = 8.0
 
 [node name="Interest" type="Node2D" node_paths=PackedStringArray("art")]
+z_index = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_leb37")
 art = NodePath("Art")
