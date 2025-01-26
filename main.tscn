@@ -713,8 +713,8 @@ texture = ExtResource("12_xc4qh")
 [node name="Cog" type="Sprite2D" parent="UI/Bubble"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-0.000183105, -1.52588e-05)
-scale = Vector2(1.32129, 1.32129)
+position = Vector2(-2.23238, 2.9729)
+scale = Vector2(1.06104, 1.06104)
 texture = ExtResource("13_s8tmv")
 
 [node name="SettingsButton" type="Button" parent="UI/Bubble/Cog"]
