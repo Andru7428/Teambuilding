@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://5ymmdk2abe1y"]
+[gd_scene load_steps=54 format=3 uid="uid://5ymmdk2abe1y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7v5kq"]
 [ext_resource type="Texture2D" uid="uid://5aoyy8kdndxp" path="res://assets/background/фон.jpg" id="1_40xyu"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cuxdicjxcbutf" path="res://assets/UI/не_активная_кнопка.png" id="12_2j7to"]
 [ext_resource type="Texture2D" uid="uid://bvo75om4orsxr" path="res://assets/UI/шестерня(1).png" id="12_5kao6"]
 [ext_resource type="Texture2D" uid="uid://cbp2mdkvff3l8" path="res://assets/UI/сообщение_1(1).png" id="12_qqu2y"]
+[ext_resource type="Texture2D" uid="uid://c527ll3wxj5xi" path="res://assets/bubbles/bubble.PNG" id="12_xc4qh"]
 [ext_resource type="Texture2D" uid="uid://cq6vb5egc7t8g" path="res://assets/UI/активная_кнопка.png" id="13_03ssm"]
 [ext_resource type="Texture2D" uid="uid://c6yl3ds5rcwb3" path="res://assets/UI/сообщение_2(1).png" id="13_28ad4"]
 [ext_resource type="Texture2D" uid="uid://p3qmxnaclyfe" path="res://assets/UI/плашка_обучения(1).png" id="13_cnun7"]
@@ -193,7 +194,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../UI/Cog:modulate")
+tracks/9/path = NodePath("../UI/Bubble/Cog:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -378,7 +379,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../UI/Cog:modulate")
+tracks/7/path = NodePath("../UI/Bubble/Cog:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -695,6 +696,7 @@ camera = NodePath("Camera")
 bubble_scene = ExtResource("2_aa7kx")
 connection_line_scene = ExtResource("3_jey7f")
 stages = Array[ExtResource("4_x8dlc")]([ExtResource("5_mafwm"), ExtResource("6_c6ylm"), ExtResource("7_aflnx"), ExtResource("8_sh0hu"), ExtResource("9_un7d5"), ExtResource("10_wbb0d")])
+skip_intro = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
@@ -704,20 +706,25 @@ metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Cog" type="Sprite2D" parent="UI"]
+[node name="Bubble" type="Sprite2D" parent="UI"]
+position = Vector2(1068, 74)
+scale = Vector2(0.605469, 0.605469)
+texture = ExtResource("12_xc4qh")
+
+[node name="Cog" type="Sprite2D" parent="UI/Bubble"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
-position = Vector2(1064, 67)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-0.000183105, -1.52588e-05)
+scale = Vector2(1.32129, 1.32129)
 texture = ExtResource("12_5kao6")
 
-[node name="SettingsButton" type="Button" parent="UI/Cog"]
+[node name="SettingsButton" type="Button" parent="UI/Bubble/Cog"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -53.0
+offset_left = -51.75
 offset_top = -49.5
-offset_right = -53.0
+offset_right = -51.75
 offset_bottom = -49.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -960,7 +967,7 @@ stream = ExtResource("29_l82nj")
 volume_db = -10.0
 bus = &"SFX"
 
-[connection signal="pressed" from="UI/Cog/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="UI/Bubble/Cog/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="UI/PhoneIcon/PopUp1/PopupButton1" to="." method="_on_popup_button_1_pressed"]
 [connection signal="pressed" from="UI/Ending/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]
