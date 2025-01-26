@@ -1115,6 +1115,7 @@ bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_8l1br")
+volume_db = -15.0
 autoplay = true
 bus = &"music"
 parameters/looping = true
