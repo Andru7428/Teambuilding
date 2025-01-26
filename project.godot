@@ -13,11 +13,16 @@ config_version=5
 config/name="Teambuilding"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
+boot_splash/bg_color=Color(0.0941176, 0.137255, 0.262745, 1)
+boot_splash/image="res://assets/UI/custom_logo.png"
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://assets/UI/kursorchik.png"
 
 [input]
 
