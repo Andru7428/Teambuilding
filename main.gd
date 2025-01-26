@@ -1,5 +1,16 @@
 extends Node
 
+const popup_1 := "Перед тобой твои сотрудники, у каждого 
+				из них есть интересы. 
+				Объедини всех в соответствии с интересами
+				в правильной  последовательности, чтобы сформировать дружный коллектив."
+
+
+const popup_2 := "О, новые сотрудники! Помни, что иногда для создания новых связей, нужно разорвать старые."
+
+const popup_3 := "Похоже, новые сотрудники имеют ещё больше интересов! Давай объединим каждый интерес одного сотрудника
+с каждым интересом другого, чтобы ещё крепче сплотить команду!"
+
 @export var camera: Camera
 @export var bubble_scene: PackedScene
 @export var connection_line_scene: PackedScene
@@ -20,7 +31,6 @@ var scale_step: float
 func _ready() -> void:
 	scale_step = 1.0 / len(stages)
 	camera.camera_scale = 1 + scale_step * current_stage
-	print(camera.camera_scale)
 	if skip_intro:
 		for i in range(current_stage + 1):
 			new_stage(stages[i])
@@ -29,9 +39,7 @@ func _ready() -> void:
 		
 		if current_stage == 0:
 			await get_tree().create_timer(1).timeout
-			$PopUpSound.play()
-			%PopUp1.show()
-			%AnimationPlayer.play("popup1_open")
+			open_popup(popup_1)
 	else:
 		current_state = States.INTRO
 		$Intro.show()
@@ -54,9 +62,7 @@ func _input(event: InputEvent) -> void:
 				dragged_bubble = targeted_bubble
 				current_state = States.DRAGGING
 				$StartDragging.play()
-		
-		if current_state == States.ENDING:
-			get_tree().quit()
+			
 	
 	if event.is_action_released("left_mouse"):
 		if current_state == States.CONNECTING:
@@ -135,7 +141,6 @@ func _on_bubble_state_changed() -> void:
 		current_stage += 1
 		new_stage(stages[current_stage])
 	else:
-		current_state = States.ENDING
 		$WinSound.play()
 		for bubble in bubbles:
 			bubble.visuals.scale = Vector2(0.9, 0.9)
@@ -156,21 +161,16 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		
 		if current_stage == 0:
 			await get_tree().create_timer(1).timeout
-			$PopUpSound.play()
-			%PopUp1.show()
-			%AnimationPlayer.play("popup1_open")
+			open_popup(popup_1)
 	
 	if anim_name == "popup1_open":
 		%PopupButton1.disabled = false
 	
 	if anim_name == "popup1_close":
 		%PopUp1.hide()
-	
-	if anim_name == "popup2_open":
-		%PopupButton2.disabled = false
-	
-	if anim_name == "popup2_close":
-		%PopUp2.hide()
+		
+	if anim_name == "ending":
+		%ExitButton.disabled = false
 
 
 func _on_start_button_pressed() -> void:
@@ -182,19 +182,19 @@ func _on_start_button_pressed() -> void:
 
 func _set_current_stage(value: int) -> void:
 	current_stage = value
+	if !is_node_ready():
+		await ready
 	if camera != null:
 		camera.camera_scale = 1 + scale_step * current_stage
 	
 	if current_stage == 1:
-		if !is_node_ready():
-			await ready
-		if !%PopupButton1.disabled:
-			%PopupButton1.disabled = true
-			%AnimationPlayer.play("popup1_close")
+		
 		await get_tree().create_timer(1).timeout
-		$PopUpSound.play()
-		%PopUp2.show()
-		%AnimationPlayer.play("popup2_open")
+		open_popup(popup_2, 38)
+	
+	if current_stage == 3:
+		await get_tree().create_timer(1).timeout
+		open_popup(popup_3)
 
 
 func _on_popup_button_1_pressed() -> void:
@@ -203,12 +203,20 @@ func _on_popup_button_1_pressed() -> void:
 	%AnimationPlayer.play("popup1_close")
 
 
-func _on_popup_button_2_pressed() -> void:
-	$PopUpSound.play()
-	%PopupButton2.disabled = true
-	%AnimationPlayer.play("popup2_close")
-
-
 func _on_settings_button_pressed() -> void:
 	$StartDragging.play()
 	%GameMenu.show()
+
+
+func open_popup(text: String, font_size: int = 28) -> void:
+	%PopupLabel.text = text
+	%PopupLabel.add_theme_font_size_override("font_size", font_size)
+	$PopUpSound.play()
+	%PopUp1.show()
+	%AnimationPlayer.play("popup1_open")
+
+
+func _on_exit_button_pressed() -> void:
+	$StartDragging.play()
+	await get_tree().create_timer(0.3).timeout
+	get_tree().change_scene_to_file("res://main_menu.tscn")
