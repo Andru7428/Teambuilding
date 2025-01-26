@@ -48,6 +48,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3clv8")
 text = "ИГРАТЬ"
 
 [node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 67.0
 offset_top = 469.0
 offset_right = 283.0
